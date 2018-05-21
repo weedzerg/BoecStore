@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    tools:context="com.lx.ltuddd.boecstore.client.activities.ItemDetailActivity">
+
+    <ImageView
+        android:id="@+id/iv_book"
+        android:layout_width="130dp"
+        android:layout_height="170dp" />
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: "
+                android:textColor="@color/colorTextDark"
+
+                android:textSize="16sp" />
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:id="@+id/tv_nameb"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:text="samsung j7"
+                android:textColor="@color/colorTextDark"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author: "
+                android:textColor="@color/colorTextDark"
+
+                android:textSize="16sp" />
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:id="@+id/tv_authorb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mz.dfjdfn"
+                android:textColor="@color/colorTextDark"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Year: "
+                android:textColor="@color/colorTextDark"
+                android:textSize="16sp" />
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:id="@+id/tv_yearb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="2012"
+                android:textColor="@color/colorTextDark"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price: "
+
+                android:textColor="@color/colorTextDark"
+                android:textSize="16sp" />
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:id="@+id/tv_priceb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50000"
+                android:textColor="@color/colorTextDark"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SaleOff: "
+
+                android:textColor="@color/colorTextDark"
+                android:textSize="16sp" />
+
+            <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                android:id="@+id/tv_saleb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-30%"
+                android:textColor="@color/colorTextDark"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/button_selector"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cart" />
+
+                <com.lx.ltuddd.boecstore.client.utils.TextMedium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Add Cart"
+                    android:textColor="@color/colorText" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -5,4 +5,5 @@ package com.lx.ltuddd.boecstore.client.utils;
  */
 
 public class Contants {
+    public static final String DATAINTENT = "dataintent";
 }

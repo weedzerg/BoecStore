@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/boder_search">
+
+    <ImageView
+        android:id="@+id/iv_nav_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_menu_nav" />
+    <EditText
+        android:id="@+id/ed_search"
+        android:layout_marginLeft="50dp"
+        android:background="#00111111"
+        android:layout_width="match_parent"
+        android:hint="Search"
+        android:layout_height="match_parent" />
+</FrameLayout>

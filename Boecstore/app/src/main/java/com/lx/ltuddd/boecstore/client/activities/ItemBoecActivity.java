@@ -1,48 +1,68 @@
 package com.lx.ltuddd.boecstore.client.activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.lx.ltuddd.boecstore.R;
+import com.lx.ltuddd.boecstore.client.adapters.PaperAdapter;
+import com.lx.ltuddd.boecstore.client.fragments.BooksFragment;
+import com.lx.ltuddd.boecstore.client.fragments.ClothesFragment;
+import com.lx.ltuddd.boecstore.client.fragments.ElectronicsFragment;
+import com.lx.ltuddd.boecstore.client.fragments.HomeFragment;
 
+import java.util.ArrayList;
 
 public class ItemBoecActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        View.OnClickListener {
+    private TabLayout tablayout;
+    private ViewPager viewPager;
+    private ImageView iv_slideNav;
+    private EditText ed_search;
+    private ArrayList<Fragment> lsFragment;
+    private PaperAdapter paperAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_boec);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        init();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
+    public void init() {
+        ed_search=(EditText) findViewById(R.id.ed_search);
+        iv_slideNav = (ImageView) findViewById(R.id.iv_nav_menu);
+        iv_slideNav.setOnClickListener(this);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        initPaper();
+    }
+
+    public void initPaper() {
+        tablayout = (TabLayout) findViewById(R.id.tablayout);
+        viewPager = (ViewPager) findViewById(R.id.paper);
+        lsFragment = new ArrayList<>();
+        lsFragment.add(new HomeFragment());
+        lsFragment.add(new BooksFragment());
+        lsFragment.add(new ElectronicsFragment());
+        lsFragment.add(new ClothesFragment());
+        paperAdapter = new PaperAdapter(getSupportFragmentManager(), lsFragment);
+        viewPager.setAdapter(paperAdapter);
+        tablayout.setupWithViewPager(viewPager);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));
+        tablayout.setTabsFromPagerAdapter(paperAdapter);
+
     }
 
     @Override
@@ -55,50 +75,41 @@ public class ItemBoecActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.item_boec, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch (item.getItemId()) {
+            case R.id.nav_fav:
+                break;
+            case R.id.nav_tran:
+                break;
+            case R.id.nav_noti:
+                break;
+            case R.id.nav_acc:
+                break;
+            case R.id.nav_share:
+                break;
+            case R.id.nav_send:
+                break;
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_nav_menu:
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                } else {
+                    drawer.openDrawer(GravityCompat.START);
+                }
+                break;
+        }
     }
 }
