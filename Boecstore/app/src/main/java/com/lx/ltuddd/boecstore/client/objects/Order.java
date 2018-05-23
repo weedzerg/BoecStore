@@ -11,6 +11,12 @@ public class Order {
     private ArrayList<Cart> lsCart;
     private boolean status;
 
+    public Order() {
+        lsCart=new ArrayList<>();
+    }
+
+    //false :dang van chuye
+    //true: da van chuyen thanh cong
     public String getId() {
         return id;
     }
@@ -36,7 +42,24 @@ public class Order {
     }
 
     public boolean addCart(Cart cart) {
-        return this.lsCart.add(cart);
+        int check = checkCart(cart.getItem());
+        if (check == -1) {
+            return this.lsCart.add(cart);
+        } else {
+            Cart c = this.lsCart.get(check);
+            c.setQuantily(c.getQuantily() + cart.getQuantily());
+            lsCart.set(check, c);
+            return true;
+        }
     }
 
+    public int checkCart(Item i) {
+        for (int p = 0; p < this.lsCart.size(); p++) {
+            Cart c = this.lsCart.get(p);
+            if (c.getItem().getId().equals(i.getId())) {
+                return p;
+            }
+        }
+        return -1;
+    }
 }
