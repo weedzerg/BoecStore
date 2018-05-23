@@ -40,6 +40,8 @@ public class ElectronicDetailActivity extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electronic_detail);
+        electronics = (Electronics) getIntent().getSerializableExtra(Contants.ELECTRONIC);
+
         mDatabase = FirebaseDatabase.getInstance().getReference().child("electronics");
 
         init();
