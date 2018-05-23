@@ -1,14 +1,12 @@
 package com.lx.ltuddd.boecstore.client.objects;
 
-import java.io.Serializable;
-
 /**
  * Created by DaiPhongPC on 5/21/2018.
  */
 
 public class Book extends Item{
-    private String type;
     private int year;
+    private String size;
     private String author;
     private String publisher;
 
@@ -21,12 +19,19 @@ public class Book extends Item{
 
     public Book(String id, String name, double price,
                 float saleOff, String description, String[] urlImage,
-                String type, int year, String author, String publisher) {
+                int year, String author, String publisher) {
         super(id, name, price, saleOff, description, urlImage);
-        this.type = type;
         this.year = year;
         this.author = author;
         this.publisher = publisher;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public String getPublisher() {
@@ -37,13 +42,6 @@ public class Book extends Item{
         this.publisher = publisher;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public int getYear() {
         return year;

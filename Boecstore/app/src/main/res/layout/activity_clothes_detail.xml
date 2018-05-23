@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context="com.lx.ltuddd.boecstore.client.activities.BookDetailActivity">
 
     <LinearLayout
+        android:padding="16dp"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -246,4 +247,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/ln_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#70111111"
+        android:gravity="center">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
 </FrameLayout>

@@ -11,6 +11,10 @@ public class Clothes extends Item{
     private String color;
     private String pattern;
 
+    public Clothes(String id, String name, double price, float saleOff, String description, String[] urlImage) {
+        super(id, name, price, saleOff, description, urlImage);
+    }
+
     public Clothes(String id, String name, double price, float saleOff, String description, String []urlImage, String brand,
                    String type, String material, String color, String pattern) {
         super(id, name, price, saleOff, description, urlImage);

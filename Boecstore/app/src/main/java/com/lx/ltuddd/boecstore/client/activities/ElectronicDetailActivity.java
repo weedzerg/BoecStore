@@ -10,6 +10,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.lx.ltuddd.boecstore.R;
 import com.lx.ltuddd.boecstore.client.objects.Cart;
 import com.lx.ltuddd.boecstore.client.objects.Electronics;
@@ -28,19 +34,23 @@ public class ElectronicDetailActivity extends AppCompatActivity implements View.
     private boolean isShowCart = false;
     private Animation slideUpAnimation, slideDownAnimation;
     private Cart c;
-
+    private DatabaseReference mDatabase;
+    private LinearLayout ln_progress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electronic_detail);
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("electronics");
+
         init();
     }
 
     public void init() {
+        ln_progress = (LinearLayout) findViewById(R.id.ln_progress);
         ln_addCart = (LinearLayout) findViewById(R.id.ln_addCart);
         ln_cart = (FrameLayout) findViewById(R.id.ln_cart);
         ln_addCart.setOnClickListener(this);
-
+        tv_add = (TextView) findViewById(R.id.tv_add);
         iv_item = (ImageView) findViewById(R.id.iv_item);
         tv_name = (TextView) findViewById(R.id.tv_name);
         tv_brand = (TextView) findViewById(R.id.tv_brand);
@@ -68,7 +78,7 @@ public class ElectronicDetailActivity extends AppCompatActivity implements View.
                 R.anim.fade_down);
 
 
-        setData();
+        loadData();
     }
 
     public void setData() {
@@ -81,6 +91,10 @@ public class ElectronicDetailActivity extends AppCompatActivity implements View.
         tv_salecart.setText("-" + electronics.getSaleOff() + "%");
         tv_price.setText(electronics.getPrice() + "đ");
         tv_pricecart.setText(electronics.getPrice() + "đ");
+        Glide.with(this)
+                .load(electronics.getUrlImage()[0])
+                .override(150, 200)
+                .into(iv_item);
     }
 
     @Override
@@ -145,5 +159,36 @@ public class ElectronicDetailActivity extends AppCompatActivity implements View.
         } else {
             super.onBackPressed();
         }
+    }
+    public void loadData() {
+        mDatabase.orderByChild("itemID").equalTo(electronics.getId()).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                electronics.setBrand(dataSnapshot.child("brand").getValue().toString());
+                electronics.setColor(dataSnapshot.child("color").getValue().toString());
+                setData();
+                ln_progress.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }

@@ -9,7 +9,11 @@ public class Electronics extends Item{
     private String type;
     private String color;
 
-    public Electronics(String id, String name,  double price,
+    public Electronics(String id, String name, double price, float saleOff, String description, String[] urlImage) {
+        super(id, name, price, saleOff, description, urlImage);
+    }
+
+    public Electronics(String id, String name, double price,
                        float saleOff, String description, String []urlImage,
                        String brand, String type, String color) {
         super(id, name,  price, saleOff, description, urlImage);

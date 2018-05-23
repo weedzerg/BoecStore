@@ -1,20 +1,30 @@
 package com.lx.ltuddd.boecstore.client.objects;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by DaiPhongPC on 5/21/2018.
  */
 
-public class Person {
+public class Person implements Serializable{
     private String id;
     private Date doD;
+    private FullName fullName;
     private String sex;
     private String number;
     private String email;
     private String urlImage;
     private Address address;
     private Account account;
+
+    public FullName getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(FullName fullName) {
+        this.fullName = fullName;
+    }
 
     public String getId() {
         return id;

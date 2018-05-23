@@ -39,7 +39,7 @@ import org.json.JSONObject;
 
 import java.util.concurrent.Callable;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private CallbackManager mFacebookCallbackManager;
     private LoginButton bt_loginfb;
     private FirebaseAuth mAuth;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_loginfb = (LoginButton) findViewById(R.id.bt_loginfb);
         logingg = (TextView) findViewById(R.id.google_login_button);
         progressBar = (LinearLayout) findViewById(R.id.progress_bar);
-        handler=new Handler();
+        handler = new Handler();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         public void run() {
                             startintent();
                         }
-                    },200);
+                    }, 200);
                     Log.d("Firebase ", "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
                     progressBar.setVisibility(View.GONE);

@@ -11,6 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.lx.ltuddd.boecstore.R;
 import com.lx.ltuddd.boecstore.client.objects.Book;
 import com.lx.ltuddd.boecstore.client.objects.Cart;
@@ -30,20 +35,23 @@ public class BookDetailActivity extends AppCompatActivity implements View.OnClic
     private boolean isShowCart = false;
     private Animation slideUpAnimation, slideDownAnimation;
     private Cart c;
+    private DatabaseReference mDatabase;
+    private LinearLayout ln_progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_book_layout);
         book = (Book) getIntent().getSerializableExtra(Contants.BOOK);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         init();
     }
 
     public void init() {
+        ln_progress = (LinearLayout) findViewById(R.id.ln_progress);
         ln_addCart = (LinearLayout) findViewById(R.id.ln_addCart);
         ln_cart = (FrameLayout) findViewById(R.id.ln_cart);
         ln_addCart.setOnClickListener(this);
-
         iv_item = (ImageView) findViewById(R.id.iv_item);
         tv_name = (TextView) findViewById(R.id.tv_name);
         tv_author = (TextView) findViewById(R.id.tv_author);
@@ -70,9 +78,10 @@ public class BookDetailActivity extends AppCompatActivity implements View.OnClic
 
         slideDownAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.fade_down);
-
-        setData();
+        loadDataBook();
     }
+
+    private int curent = 0;
 
     public void setData() {
         tv_name.setText(book.getName());
@@ -89,16 +98,30 @@ public class BookDetailActivity extends AppCompatActivity implements View.OnClic
                 .load(book.getUrlImage()[0])
                 .override(150, 200)
                 .into(iv_item);
-        iv_item.setOnTouchListener(new OnSwipeTouchListener(this){
+        iv_item.setOnTouchListener(new OnSwipeTouchListener(this) {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                
+                if (curent == 0) return;
+                curent--;
+                Glide.with(getBaseContext())
+                        .load(book.getUrlImage()[curent])
+                        .override(150, 200)
+                        .into(iv_item);
+
             }
 
             @Override
             public void onSwipeLeft() {
+
                 super.onSwipeLeft();
+                if (curent == 2) return;
+                curent++;
+                Glide.with(getBaseContext())
+                        .load(book.getUrlImage()[curent])
+                        .override(150, 200)
+                        .into(iv_item);
+
             }
         });
     }
@@ -163,5 +186,40 @@ public class BookDetailActivity extends AppCompatActivity implements View.OnClic
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void loadDataBook() {
+        mDatabase.child("books/").orderByChild("itemID").equalTo(book.getId()).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                book.setAuthor(dataSnapshot.child("author").getValue().toString());
+                book.setAuthor(dataSnapshot.child("publisher").getValue().toString());
+                book.setSize(dataSnapshot.child("size").getValue().toString());
+                book.setYear(Integer.valueOf(dataSnapshot.child("year").getValue().toString()));
+                setData();
+                ln_progress.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 }

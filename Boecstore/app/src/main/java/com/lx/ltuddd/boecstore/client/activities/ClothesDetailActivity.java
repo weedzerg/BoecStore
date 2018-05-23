@@ -10,6 +10,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.lx.ltuddd.boecstore.R;
 import com.lx.ltuddd.boecstore.client.objects.Cart;
 import com.lx.ltuddd.boecstore.client.objects.Clothes;
@@ -28,15 +34,20 @@ public class ClothesDetailActivity extends AppCompatActivity implements View.OnC
     private boolean isShowCart = false;
     private Animation slideUpAnimation, slideDownAnimation;
     private Cart c;
+    private DatabaseReference mDatabase;
+    private LinearLayout ln_progress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clothes_detail);
         clothes = (Clothes) getIntent().getSerializableExtra(Contants.CLOTHES);
+        mDatabase = FirebaseDatabase.getInstance().getReference("clothes");
+
         init();
     }
 
     public void init() {
+        ln_progress = (LinearLayout) findViewById(R.id.ln_progress);
         ln_addCart = (LinearLayout) findViewById(R.id.ln_addCart);
         ln_cart = (FrameLayout) findViewById(R.id.ln_cart);
         ln_addCart.setOnClickListener(this);
@@ -49,6 +60,7 @@ public class ClothesDetailActivity extends AppCompatActivity implements View.OnC
         tv_price = (TextView) findViewById(R.id.tv_price);
         tv_saleOff = (TextView) findViewById(R.id.tv_sale);
         tv_des = (TextView) findViewById(R.id.tv_des);
+        tv_add = (TextView) findViewById(R.id.tv_add);
 
         tv_total = (TextView) findViewById(R.id.tv_total);
         tv_namecart = (TextView) findViewById(R.id.tv_namecart);
@@ -68,8 +80,7 @@ public class ClothesDetailActivity extends AppCompatActivity implements View.OnC
         slideDownAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.fade_down);
 
-
-        setData();
+        loadData();
     }
 
     public void setData() {
@@ -84,6 +95,10 @@ public class ClothesDetailActivity extends AppCompatActivity implements View.OnC
         tv_salecart.setText("-" + clothes.getSaleOff() + "%");
         tv_price.setText(clothes.getPrice() + "đ");
         tv_pricecart.setText(clothes.getPrice() + "đ");
+        Glide.with(this)
+                .load(clothes.getUrlImage()[0])
+                .override(150, 200)
+                .into(iv_item);
     }
 
     @Override
@@ -146,5 +161,37 @@ public class ClothesDetailActivity extends AppCompatActivity implements View.OnC
         } else {
             super.onBackPressed();
         }
+    }
+    public void loadData() {
+        mDatabase.orderByChild("itemID").equalTo(clothes.getId()).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                clothes.setBrand(dataSnapshot.child("brand").getValue().toString());
+                clothes.setColor(dataSnapshot.child("color").getValue().toString());
+                clothes.setMaterial(dataSnapshot.child("material").getValue().toString());
+                setData();
+                ln_progress.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }

@@ -1,33 +1,37 @@
-package com.lx.ltuddd.boecstore.client.admin;
+package com.lx.ltuddd.boecstore.admin;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.lx.ltuddd.boecstore.R;
 import com.lx.ltuddd.boecstore.client.objects.Electronics;
+import com.lx.ltuddd.boecstore.client.utils.Utils;
 
 public class AdminAddElectronicActivity extends AppCompatActivity {
 
     private TextView tvTitle;
     private EditText etName, etPrice, etSaleOff, etDescription, etUrlImage, etBrand, etType, etColor;
     private Button btnOk, btnCancel;
+    private DatabaseReference ref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_admin_form_electronic);
-
+        ref = FirebaseDatabase.getInstance().getReference();
         tvTitle = findViewById(R.id.tvTitle);
         etName = findViewById(R.id.etName);
         etPrice = findViewById(R.id.etPrice);
         etSaleOff = findViewById(R.id.etSaleOff);
-        etDescription =findViewById(R.id.etDescription);
+        etDescription = findViewById(R.id.etDescription);
         etUrlImage = findViewById(R.id.etUrlImage);
         etBrand = findViewById(R.id.etBrand);
         etType = findViewById(R.id.etType);
@@ -40,24 +44,18 @@ public class AdminAddElectronicActivity extends AppCompatActivity {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Electronics electronics = new Electronics("",
+                String id = ref.child("item").push().getKey();
+                Electronics e = new Electronics("",
                         etName.getText().toString(),
-                        Double.parseDouble("0"+etPrice.getText().toString()),
-                        Float.parseFloat("0"+etSaleOff.getText().toString()),
+                        Double.parseDouble("0" + etPrice.getText().toString()),
+                        Float.parseFloat("0" + etSaleOff.getText().toString()),
                         etDescription.getText().toString(),
-                        etUrlImage.getText().toString(),
+                        new String[]{etUrlImage.getText().toString()},
                         etBrand.getText().toString(),
                         etType.getText().toString(),
                         etColor.getText().toString());
-                if(addElectronics(electronics)){
-                    Toast.makeText(AdminAddElectronicActivity.this, "Add sucess", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(AdminAddElectronicActivity.this, AdminActivity.class);
-                    intent.putExtra("tab", 1);
-                    startActivity(intent);
-                    finish();
-                }else {
-                    Toast.makeText(AdminAddElectronicActivity.this,"Add Failed", Toast.LENGTH_SHORT).show();
-                }
+                ref.child("item").child(id).updateChildren(Utils.creatItem(e));
+                ref.child("clothes").child(id).updateChildren(Utils.creatElectronic(e));
             }
         });
 
@@ -72,7 +70,4 @@ public class AdminAddElectronicActivity extends AppCompatActivity {
         });
     }
 
-    private boolean addElectronics(Electronics electronics){
-        return true;
-    }
 }
