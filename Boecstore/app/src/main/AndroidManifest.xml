@@ -22,6 +22,9 @@
         <activity android:name=".client.activities.MainActivity" />
         <activity
             android:name=".client.activities.ItemBoecActivity"
+            android:label="@string/title_activity_item_boec" />
+        <activity android:name=".client.activities.ItemDetailActivity" />
+        <activity android:name=".client.admin.AdminActivity">
             android:label="@string/title_activity_item_boec"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/AppTheme.NoActionBar">
@@ -31,6 +34,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".client.admin.AdminBookActivity" />
+        <activity android:name=".client.admin.AdminElectronicActivity" />
+        <activity android:name=".client.admin.AdminClothesActivity" />
+        <activity android:name=".client.admin.AdminAddBookActivity" />
+        <activity android:name=".client.admin.AdminEditBookActivity" />
+        <activity android:name=".client.admin.AdminAddElectronicActivity" />
+        <activity android:name=".client.admin.AdminEditElectronicActivity" />
+        <activity android:name=".client.admin.AdminAddClothesActivity" />
+        <activity android:name=".client.admin.AdminEditClothesActivity"></activity>
         <activity android:name=".client.activities.BookDetailActivity" />
         <activity android:name=".client.activities.ClothesDetailActivity" />
         <activity android:name=".client.activities.ElectronicDetailActivity"></activity>
