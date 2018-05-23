@@ -1,10 +1,12 @@
 package com.lx.ltuddd.boecstore.client.objects;
 
+import java.io.Serializable;
+
 /**
  * Created by DaiPhongPC on 5/21/2018.
  */
 
-public class Book extends Item {
+public class Book extends Item{
     private String type;
     private int year;
     private String author;
