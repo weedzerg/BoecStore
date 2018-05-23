@@ -25,6 +25,9 @@
             android:label="@string/title_activity_item_boec" />
         <activity android:name=".client.activities.ItemDetailActivity" />
         <activity android:name=".client.admin.AdminActivity">
+            android:label="@string/title_activity_item_boec"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,6 +43,9 @@
         <activity android:name=".client.admin.AdminEditElectronicActivity" />
         <activity android:name=".client.admin.AdminAddClothesActivity" />
         <activity android:name=".client.admin.AdminEditClothesActivity"></activity>
+        <activity android:name=".client.activities.BookDetailActivity" />
+        <activity android:name=".client.activities.ClothesDetailActivity" />
+        <activity android:name=".client.activities.ElectronicDetailActivity"></activity>
     </application>
 
 </manifest>

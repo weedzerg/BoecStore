@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.lx.ltuddd.boecstore.client.activities.ItemDetailActivity;
+import com.lx.ltuddd.boecstore.client.activities.BookDetailActivity;
 import com.lx.ltuddd.boecstore.client.objects.Electronics;
 import com.lx.ltuddd.boecstore.client.utils.Contants;
 
@@ -32,8 +32,8 @@ public class AdapterElectronics extends AdapterItems {
         holder.tv_detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), ItemDetailActivity.class);
-                intent.putExtra(Contants.DATAINTENT, b);
+                Intent intent = new Intent(getContext(), BookDetailActivity.class);
+                intent.putExtra(Contants.ELECTRONIC, b);
                 getContext().startActivity(intent);
             }
         });

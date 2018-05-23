@@ -41,7 +41,7 @@ public class ItemBoecActivity extends AppCompatActivity
     }
 
     public void init() {
-        ed_search=(EditText) findViewById(R.id.ed_search);
+        ed_search = (EditText) findViewById(R.id.ed_search);
         iv_slideNav = (ImageView) findViewById(R.id.iv_nav_menu);
         iv_slideNav.setOnClickListener(this);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -112,4 +112,5 @@ public class ItemBoecActivity extends AppCompatActivity
                 break;
         }
     }
+
 }

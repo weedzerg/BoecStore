@@ -35,11 +35,11 @@ public class BooksFragment extends Fragment {
 
     public void init(View v) {
         ls.add(new Book(1 + "", "tony buoi sang", 50000, 0.1f,
-                "sach", "", "sach triet ly", 2001, "Tony"));
+                "sach", "http://vn-test-11.slatic.net/p/2/xiaomi-redmi-5a-16gb-ram-2gb-vang-hong-hang-phan-phoi-chinh-thuc-4614-06179603-fe09e127d4ff4020b7cae0950d5e2dda-catalog.jpg_340x340q80.jpg", "sach triet ly", 2001, "Tony", ""));
         ls.add(new Book(1 + "", "tony buoi sang1", 80000, 0.1f,
-                "sach", "", "sach triet ly", 2001, "Tony"));
+                "sach", "http://vn-test-11.slatic.net/p/2/xiaomi-redmi-5a-16gb-ram-2gb-vang-hong-hang-phan-phoi-chinh-thuc-4614-06179603-fe09e127d4ff4020b7cae0950d5e2dda-catalog.jpg_340x340q80.jpg", "sach triet ly", 2001, "Tony", ""));
         ls.add(new Book(1 + "", "tony buoi sang2", 90000, 0.1f,
-                "sach", "", "sach triet ly", 2001, "Tony"));
+                "sach", "http://vn-test-11.slatic.net/p/2/xiaomi-redmi-5a-16gb-ram-2gb-vang-hong-hang-phan-phoi-chinh-thuc-4614-06179603-fe09e127d4ff4020b7cae0950d5e2dda-catalog.jpg_340x340q80.jpg", "sach triet ly", 2001, "Tony", ""));
         rc_view = (RecyclerView) v.findViewById(R.id.rc_items);
         adapterBook = new AdapterBook(getContext(), ls);
         rc_view.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
