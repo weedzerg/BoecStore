@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.view.View;
 
+import com.bumptech.glide.Glide;
 import com.lx.ltuddd.boecstore.client.activities.BookDetailActivity;
 import com.lx.ltuddd.boecstore.client.objects.Book;
 import com.lx.ltuddd.boecstore.client.utils.Contants;
+import com.lx.ltuddd.boecstore.client.utils.OnSwipeTouchListener;
 
 import java.util.ArrayList;
 
@@ -24,12 +26,12 @@ public class AdapterBook extends AdapterItems {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ItemHolder holder, int position) {
         final Book b = getItem(position);
         holder.tv_name.setText(b.getName());
         holder.tv_price.setText(b.getPrice() + "");
         holder.tv_sale.setText(b.getSaleOff() + "");
-        holder.tv_detail.setOnClickListener(new View.OnClickListener() {
+        holder.iv_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), BookDetailActivity.class);
@@ -37,6 +39,8 @@ public class AdapterBook extends AdapterItems {
                 getContext().startActivity(intent);
             }
         });
+        Glide.with(getContext()).load(b.getUrlImage()[0]).override(150,200).into(holder.iv_item);
+
     }
 
     @Override

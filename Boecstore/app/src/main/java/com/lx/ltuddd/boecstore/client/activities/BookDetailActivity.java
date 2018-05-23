@@ -17,6 +17,7 @@ import com.lx.ltuddd.boecstore.client.objects.Cart;
 import com.lx.ltuddd.boecstore.client.objects.Item;
 import com.lx.ltuddd.boecstore.client.objects.Order;
 import com.lx.ltuddd.boecstore.client.utils.Contants;
+import com.lx.ltuddd.boecstore.client.utils.OnSwipeTouchListener;
 
 public class BookDetailActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_name, tv_author, tv_year, tv_price, tv_saleOff, tv_des;
@@ -85,9 +86,21 @@ public class BookDetailActivity extends AppCompatActivity implements View.OnClic
         tv_price.setText(book.getPrice() + "đ");
         tv_pricecart.setText(book.getPrice() + "đ");
         Glide.with(this)
-                .load(book.getUrlImage())
-                .override(200, 200)
+                .load(book.getUrlImage()[0])
+                .override(150, 200)
                 .into(iv_item);
+        iv_item.setOnTouchListener(new OnSwipeTouchListener(this){
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+            }
+        });
     }
 
     @Override

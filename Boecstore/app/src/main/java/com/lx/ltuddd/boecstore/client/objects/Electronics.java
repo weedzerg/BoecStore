@@ -10,7 +10,7 @@ public class Electronics extends Item{
     private String color;
 
     public Electronics(String id, String name,  double price,
-                       float saleOff, String description, String urlImage,
+                       float saleOff, String description, String []urlImage,
                        String brand, String type, String color) {
         super(id, name,  price, saleOff, description, urlImage);
         this.brand = brand;

@@ -12,10 +12,13 @@ public class Item implements Serializable {
     private double price;
     private float saleOff;
     private String description;
-    private String urlImage;
+    private String [] urlImage;
+
+    public Item() {
+    }
 
     public Item(String id, String name,
-                double price, float saleOff, String description, String urlImage) {
+                double price, float saleOff, String description, String[] urlImage) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -65,11 +68,11 @@ public class Item implements Serializable {
         this.description = description;
     }
 
-    public String getUrlImage() {
+    public String[] getUrlImage() {
         return urlImage;
     }
 
-    public void setUrlImage(String urlImage) {
+    public void setUrlImage(String[] urlImage) {
         this.urlImage = urlImage;
     }
     public double sumaryPrice(){

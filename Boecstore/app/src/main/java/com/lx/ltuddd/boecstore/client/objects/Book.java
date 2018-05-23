@@ -10,8 +10,15 @@ public class Book extends Item {
     private String author;
     private String publisher;
 
+    public Book() {
+    }
+
+    public Book(String id, String name, double price, float saleOff, String description, String[] urlImage) {
+        super(id, name, price, saleOff, description, urlImage);
+    }
+
     public Book(String id, String name, double price,
-                float saleOff, String description, String urlImage,
+                float saleOff, String description, String[] urlImage,
                 String type, int year, String author, String publisher) {
         super(id, name, price, saleOff, description, urlImage);
         this.type = type;
