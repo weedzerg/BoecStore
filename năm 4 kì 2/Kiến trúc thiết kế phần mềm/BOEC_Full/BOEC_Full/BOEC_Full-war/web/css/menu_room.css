@@ -1,0 +1,491 @@
+body{
+	font-family: Arial;
+	font-size: 12px;
+	padding: 0px;
+	margin: 0px;
+
+}
+ul{
+	padding: 0px;
+	margin:0px;
+	list-style: none;
+}
+.wrapper{
+	width: 1000px;
+	margin:auto;
+	background-image: url('C:/Users/LOAN/Downloads/BaiTH3/BaiTH3/images/background.png');
+	background-repeat: no-repeat;
+	background-size: 1000px 1600px;
+}
+.banner{
+	background-image: url('C:/Users/LOAN/Downloads/BaiTH3/BaiTH3/images/logo.png');
+	background-repeat: no-repeat;
+	background-position: 400px 0px;
+	height: 170px;
+	width: 1000px;
+}
+.banner .left img{
+	width: 50px;
+	margin-left: 10px;
+	height: 53px;
+}
+.search{
+	border: 2px solid #ecded2;
+	width: 230px;
+	padding-bottom: 5px;
+	margin-left: 120px;
+	border-radius: 15px;
+	background-color: #ecded2;
+	box-shadow: -5px 5px 5px #464441;
+	font-family: arial;
+	margin-top: 50px;
+	padding-left: 15px;
+	padding-top: 10px;
+	background-image: url('C:/Users/LOAN/Downloads/BaiTH3/BaiTH3/images/search.png');
+	background-repeat: no-repeat;
+	background-position: 185px 0px;
+	background-size: 30px;
+}
+.cart{
+	margin-top: 0px;
+	margin-left: 750px;
+}
+.cart ul li{
+	float: left;
+	list-style: none;
+	margin-left: 30px;
+}
+.cart ul li a{
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
+	text-align: arial;
+}
+.cart img{
+	width: 35px;
+}
+.menu .left{
+	float: left;
+	width: 175px;
+	font-size: 11px;
+	text-align: center;
+}
+
+.menu{
+	background-color: #fef0cb;
+	line-height: 30px;
+}
+.menu .right{
+	width: 825px;
+	float: left;
+}
+.menu .right ul li{
+	display: inline;
+	margin-left: 20px;
+}
+.menu .right ul li a{
+	text-decoration: none;
+	font-weight: bold;
+	color: #dd4e01;
+	padding: 0px 30px;
+	font-size: 15px;
+}
+.menu .right ul li a:hover{
+	color:black;
+}
+.content .left{
+    margin-left: -150px;
+	float: left;
+	width: 175px;
+}
+.content .main{
+	float: left;
+	width: 635px;
+}
+.content .right{
+	float: left;
+	width: 190px;
+}
+.content .left .category ul li{
+	line-height: 21px;
+	margin-top: 5px;
+	margin-left: 3px;
+}
+.content .left .category ul li a img{
+	
+	width: 175px;
+}
+.search{
+	margin-top: 1px;
+}
+.static{
+	margin-top: 10px;
+	background-image: url('C:/Users/LOAN/Downloads/BaiTH3/BaiTH3/images/static.jpg');
+}
+.static ul{
+	margin-left: 50px;
+}
+.static ul li{
+	line-height: 20px;
+}
+.static ul li span{
+	font-weight: bold;
+}
+.slide{
+	position:relative; 
+	width: 612px;
+	height: 222px;
+	margin-top: 15px;
+}
+.slide img{
+	position:absolute;
+	margin-top: 5px;
+	width: 612px;
+	height: 222px;
+	margin-left: 10px;
+}
+.text{
+	padding-top: 30px;
+	font-size: 25px;
+	font-weight: bold;
+	margin-left: 30px;
+}
+.text i{
+	padding-left: 100px;
+}
+.box_main{
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.box_main .box_title{
+	color: blue;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+.box_main .box_title:hover{
+	color: purple;
+}
+.box_main p{
+	padding-left: 30px;
+}
+.box_main .box_video{
+	margin-left: 30px;
+}
+.box_content{
+	float: left;
+	margin-left: 5px;
+}
+.box_content ul li{
+	float: left;
+	width: 130px;
+	margin-top: 10px;
+	border-radius: 10px;
+	margin-right: 5px;
+	margin-left: 10px;
+	border: 2px solid #dddddd;
+}
+.box_content ul li .product_image{
+	margin:auto;
+	text-align: center;
+	overflow: hidden;
+	margin-top: 5px;
+}
+.box_content ul li .product_image img{
+	width: 120px;
+	height: 120px;
+}
+.box_content ul li .product_title{
+	text-align: center;
+	margin-bottom: 5px;
+}
+.box_content ul li .product_title a{
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	color: black;
+}
+
+.box_content ul li .product_link{
+	text-align: center;
+	color: #dd4e01;
+	margin-bottom: 5px;
+}
+.box_content ul li .product_link a{
+	color: #dd4e01;
+	text-decoration: none;
+}
+
+.adv{
+	width: 182px;
+	border:1px solid #b5930b;
+	border-radius: 0px 0px 0px 20px;
+	margin-top: 10px;
+}
+.adv_content ul{
+	margin-left: 10px;
+}
+.adv_content ul li{
+	margin-bottom: 5px;
+}
+.adv_content ul li a{
+	text-decoration: none;
+	color: black;
+	text-align: center;
+}
+.adv_content ul li a img{
+	width: 170px;
+}
+.support{
+	margin-top: 10px;
+	width: 170px;
+	border:1px solid #b5930b;
+	margin-left: 5px;
+	background-color: white;
+}
+.support .support_title{
+	background-image: url('C:/Users/LOAN/Downloads/BaiTH3/BaiTH3/images/support.jpg');
+	line-height: 30px;
+	text-align: center;
+	font-weight: bold;
+	color: #dd4e01;
+}
+.support_content ul li{
+	text-align: center;
+	margin-bottom: 5px;
+}
+.support_contact{
+	background-image: url('C:/Users/LOAN/Downloads/BaiTH3/BaiTH3/images/contact.jpg');
+	background-repeat: no-repeat;
+}
+.support_contact ul{
+	margin-left: 28px;
+}
+.support_contact ul li{
+	line-height: 20px;
+	font-size: 11px;
+	color:#dd4e01;
+}
+.box_video{
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+.checkmail{
+	margin-top: 15px;
+	width: 184px;
+	height: 180px;
+	background-image: url('C:/Users/LOAN/Downloads/BaiTH3/BaiTH3/images/checkmail.jpg');
+}
+.checkmail ul{
+	padding-top: 60px;
+	margin-left: 10px;
+}
+.checkmail ul li{
+	margin-bottom: 5px;
+}
+.anh img{
+	width: 150px;
+	height: 150px;
+	margin-top: 50px;
+}
+.footer{
+	float: left;
+	width: 1000px;
+	margin-top: 2px;
+	background-image: url('C:/Users/LOAN/Downloads/BaiTH3/BaiTH3/images/foot.jpg');
+	background-repeat: no-repeat;
+	background-position: 20px 10px;
+}
+.footer_left{
+	float: left;
+	width: 400px;
+}
+.footer_left ul li{
+	float: left;
+	list-style: none;
+	line-height: 30px;
+	margin-left: 150px;
+}
+.footer_left ul li a{
+	color: white;
+	text-decoration: none;
+	text-align: center;
+}
+
+.footer_left ul li a img{
+	width: 30px;
+	height: 30px;
+	margin-right: 20px;
+}
+.footer_center{
+	float: left;
+	width: 200px;
+	margin-left: 50px;
+}
+.footer_center p{
+	color: white;
+	text-align: center;
+	font-size: 15px;
+}
+.footer_center ul li{
+	float: left;
+	list-style: none;
+	margin-left: 10px;
+}
+.footer_center ul li a img{
+	width: 50px;
+}
+.footer_right{
+	float: left;
+	width: 200px;
+	margin-left: 50px;
+	margin-top: 10px;
+}
+.footer_right ul li{
+	float: left;
+	list-style: none;
+	margin-top: 10px;
+}
+.footer_right ul li a{
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+	text-align: center;
+}
+.chu p{
+	margin-top: -120px;
+	font-family: VNI-WIN Sampl;
+	font-size: 30px;
+	margin-left: 70px;
+}
+.binhluan{
+	width: 166px;
+	height:70px;
+	border:2px solid black;
+	margin-top: 5px;
+
+}
+#nav
+{
+    width: 630px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-left: -320px;
+    z-index: 1;
+    height: 40px;
+    margin-top: -10px;
+ }
+#nav > a
+{
+    display: none;
+}
+ 
+#nav li
+{
+    position: relative;
+    list-style: none;
+}
+ 
+#nav li a
+{
+    color: #fff;
+    display: block;
+}
+ 
+#nav li a:active
+{
+    background-color: #c00 !important;
+}
+ 
+#nav span:after
+{
+    width: 0;
+    height: 0;
+    border: 0.313em solid transparent; /* 5 */
+    border-bottom: none;
+    border-top-color: #efa585;
+    content: '';
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    right: -0.313em; /* 5 */
+}
+ 
+/* first level */
+ 
+#nav > ul
+{
+    height: 3.75em; /* 60 */
+    background-color: #caa392;;
+                 
+}
+ 
+#nav > ul > li
+{
+  width: 105px;
+  height: 100%;
+  float: left;
+  list-style:none;
+}
+ 
+#nav > ul > li > a
+{
+  height: 100%;
+  font-size: 1.5em; /* 24 */
+  line-height: 2.5em; /* 60 (24) */
+  text-align: center;
+}
+                         
+#nav > ul > li:not( :last-child ) > a
+{
+ border-right: 1px solid #cc470d;
+}
+ 
+#nav > ul > li:hover > a,
+#nav > ul:not( :hover ) > li.active > a
+{
+    background-color: #cc470d;
+}
+ 
+ 
+/* second level */
+ 
+#nav li ul
+{
+    background-color: #cc470d;
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding:0;
+    margin:0;
+}
+ 
+#nav li:hover ul
+{
+    display: block;
+    left: 0;
+    right: 0;
+}
+                         
+#nav li:not( :first-child ):hover ul
+{
+    left: -1px;
+}
+                         
+#nav li ul a
+{
+    font-size: 1.25em; /* 20 */
+    border-top: 1px solid #e15a1f;
+    padding: 0.75em; /* 15 (20) */
+}
+ 
+#nav li ul li a:hover,
+#nav li ul:not( :hover ) li.active a
+{
+    background-color: #e15a1f;
+}

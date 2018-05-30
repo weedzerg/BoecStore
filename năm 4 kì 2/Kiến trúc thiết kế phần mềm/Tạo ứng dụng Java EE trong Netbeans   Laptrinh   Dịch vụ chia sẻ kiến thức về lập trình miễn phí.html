@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html data-dir="ltr" style="direction: ltr;" lang="vi"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Tạo ứng dụng Java EE trong Netbeans | Laptrinh | Dịch vụ chia sẻ kiến thức về lập trình miễn phí</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="content-type" content="text/html; charset=UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta property="og:site_name" content="LaptrinhX">
+<meta name="msapplication-badge" content="frequency=30; polling-uri=http://laptrinhx.com/sitemap.xml">
+<meta name="keywords" content="Học lập trình,tài liệu học lập trình,chia sẻ kiến thức lập trình,quản lí tài liệu,ebook,pdf,download,gitbhub,trending,repositories,source,code,bitcoin">
+<meta name="msapplication-square150x150logo" content="https://i.imgur.com/CD5YFuO.gif">
+<meta name="title" content="Tạo ứng dụng Java EE trong Netbeans">
+<meta name="description" content="Tạo ứng dụng Java EE trong Netbeans Trong tut này, mình sẽ hướng dẫn các bạn tạo và chạy một ứng dụng Java EE trong Netbeans, cũng như sửa một số lỗi hay gặp. Chuẩn bị  IDE: Netbeans 8.0.2 Web Server: GlassFish 4.1 Hệ quản trị CSDL: MySQL  Hệ điều hành: W...">
+<meta property="og:title" content="Tạo ứng dụng Java EE trong Netbeans">
+<meta property="og:description" content="Tạo ứng dụng Java EE trong Netbeans Trong tut này, mình sẽ hướng dẫn các bạn tạo và chạy một ứng dụng Java EE trong Netbeans, cũng như sửa một số lỗi hay gặp. Chuẩn bị  IDE: Netbeans 8.0.2 Web Server: GlassFish 4.1 Hệ quản trị CSDL: MySQL  Hệ điều hành: W...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="http://i.imgur.com/5NgPKSo.png">
+<meta property="og:image:url" content="http://i.imgur.com/5NgPKSo.png">
+<meta property="article:published_time" content="2017-04-07T14:10:02.000Z">
+<meta property="article:modified_time" content="2017-04-07T14:10:02.000Z">
+<meta property="article:section" content="Diễn đàn">
+<meta property="og:url" content="http://laptrinhx.com/topic/27562/Tao-ung-dung-Java-EE-trong-Netbeans">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<script async="" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/analytics.js"></script><script src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/5cWDaZFLh_tituqMYhYg2mtpfLU.js"></script><link rel="stylesheet" type="text/css" href="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/stylesheet.css">
+<link rel="icon" type="image/x-icon" href="https://laptrinhx.com/favicon.ico?v=3apsfghvslj">
+<link rel="manifest" href="https://laptrinhx.com/manifest.json">
+<link rel="search" type="application/opensearchdescription+xml" title="LaptrinhX" href="https://laptrinhx.com/osd.xml">
+<link rel="apple-touch-icon" href="https://laptrinhx.com/apple-touch-icon">
+<link rel="icon" sizes="36x36" href="https://laptrinhx.com/assets/uploads/system/touchicon-36.png">
+<link rel="icon" sizes="48x48" href="https://laptrinhx.com/assets/uploads/system/touchicon-48.png">
+<link rel="icon" sizes="72x72" href="https://laptrinhx.com/assets/uploads/system/touchicon-72.png">
+<link rel="icon" sizes="96x96" href="https://laptrinhx.com/assets/uploads/system/touchicon-96.png">
+<link rel="icon" sizes="144x144" href="https://laptrinhx.com/assets/uploads/system/touchicon-144.png">
+<link rel="icon" sizes="192x192" href="https://laptrinhx.com/assets/uploads/system/touchicon-192.png">
+<link rel="prefetch stylesheet" href="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/css.css">
+<link rel="stylesheet" href="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/monokai-sublime.css">
+<link rel="prefetch" href="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/highlight.js">
+<link rel="prefetch" href="https://laptrinhx.com/assets/language/vi/markdown.json?v=3apsfghvslj">
+<link rel="prefetch" href="https://laptrinhx.com/assets/src/modules/composer.js?v=3apsfghvslj">
+<link rel="prefetch" href="https://laptrinhx.com/assets/src/modules/composer/uploads.js?v=3apsfghvslj">
+<link rel="prefetch" href="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/drafts.js">
+<link rel="prefetch" href="https://laptrinhx.com/assets/src/modules/composer/tags.js?v=3apsfghvslj">
+<link rel="prefetch" href="https://laptrinhx.com/assets/src/modules/composer/categoryList.js?v=3apsfghvslj">
+<link rel="prefetch" href="https://laptrinhx.com/assets/src/modules/composer/resize.js?v=3apsfghvslj">
+<link rel="prefetch" href="https://laptrinhx.com/assets/src/modules/composer/autocomplete.js?v=3apsfghvslj">
+<link rel="prefetch" href="https://laptrinhx.com/assets/templates/composer.tpl?v=3apsfghvslj">
+<link rel="prefetch" href="https://laptrinhx.com/assets/language/vi/topic.json?v=3apsfghvslj">
+<link rel="prefetch" href="https://laptrinhx.com/assets/language/vi/modules.json?v=3apsfghvslj">
+<link rel="prefetch" href="https://laptrinhx.com/assets/language/vi/tags.json?v=3apsfghvslj">
+<link rel="alternate" type="application/rss+xml" href="https://laptrinhx.com/topic/27562.rss">
+<link rel="canonical" href="https://laptrinhx.com/topic/27562/Tao-ung-dung-Java-EE-trong-Netbeans">
+<link rel="up" href="https://laptrinhx.com/category/1/dien-dan">
+<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"environment":"production","relative_path":"","version":"1.6.0","siteTitle":"LaptrinhX","browserTitle":"Dịch vụ chia sẻ kiến thức về lập trình miễn phí","titleLayout":"&#123;pageTitle&#125; | Laptrinh | &#123;browserTitle&#125;","showSiteTitle":false,"minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"152767","minimumTagsPerTopic":0,"maximumTagsPerTopic":5,"minimumTagLength":"1","maximumTagLength":"50","hasImageUploadPlugin":true,"useOutgoingLinksPage":true,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowTopicsThumbnail":true,"usePagination":false,"disableChat":true,"disableChatMessageEditing":true,"socketioTransports":["polling","websocket"],"websocketAddress":"","maxReconnectionAttempts":5,"reconnectionDelay":1500,"topicsPerPage":"20","postsPerPage":"20","maximumFileSize":"2048","theme:id":"nodebb-theme-persona","theme:src":"","defaultLang":"vi","userLang":"vi","loggedIn":false,"cache-buster":"v=3apsfghvslj","requireEmailConfirmation":true,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"pi30mOV3-DCFYF2hjhoDu4RC93WWqQcq9C-0","searchEnabled":true,"bootswatchSkin":"noskin","defaultBootswatchSkin":"noskin","outgoingLinksWhitelist":"","timeagoCutoff":"","cookies":{"enabled":false,"message":"[[global:cookies.message]]","dismiss":"[[global:cookies.accept]]","link":"[[global:cookies.learn_more]]"},"topicSearchEnabled":false,"delayImageLoading":true,"markdown":{"highlight":1,"theme":"monokai-sublime.css"},"hideSubCategories":false,"hideCategoryLastPost":true,"enableQuickReply":false,"composer-default":{}}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"uid":0,"username":"Khách","userslug":"","email":"","picture":"","status":"offline","reputation":0,"email:confirmed":false,"isAdmin":false,"isGlobalMod":false,"isMod":false,"isEmailConfirmSent":false}')
+		};
+	</script>
+<meta name="msvalidate.01" content="20657D0D1E4F14A48D0775EBD78ED655">
+<meta name="google-site-verification" content="zZvRn03YFpea4p0DJfF2Wlk_l8h1UwwHb0UdUniQHRs">
+<style type="text/css">img.user-img{max-width:100px;border-radius:5px}.header .forum-logo{float:left;max-height:50px;width:auto}.footer{margin-top:1em;text-align:center;-webkit-transition:opacity .2s linear;transition:opacity .2s linear}span.inline-block{border-radius:4px;border:1px solid #039BE5;margin:5px;padding:5px}.tag-item,.tag-topic-count{font-size:85%;white-space:nowrap}.tag-topic-count{color:#78acd9;padding:0 .4em .1em;font-weight:700;border-left:none}.bs-callout{padding:15px;margin-bottom:30px;margin-top:10px;border-left:3px solid #eee}.bs-callout-info{background-color:#f4f8fa;border-color:#5bc0de !important}span.topics-tags{font-size:10px;background:#f5f5f5;padding:5px;margin:3px;line-height:35px}.tag-topic-count{line-height:30px}</style>
+<link rel="stylesheet" href="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/js-enabled.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="postSelect" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/postSelect.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="forum/topic/delete-posts" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/delete-posts.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="forum/topic/votes" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/votes.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="forum/topic/move-post" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/move-post.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="forum/topic/replies" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/replies.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="composer/drafts" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/drafts.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/assets/templates/modules/taskbar.js" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/taskbar.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mousetrap" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/mousetrap.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="highlight" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/highlight.js"></script><style type="text/css" id="styles-emoji-extended">.emoji { display: inline-block; }
+</style><link rel="preload" href="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/integrator_002.js" as="script"><script type="text/javascript" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/integrator_002.js"></script><link rel="preload" href="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/integrator.js" as="script"><script type="text/javascript" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/integrator.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="sounds" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/sounds.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="forum/chats/recent" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/recent.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="forum/chats/search" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/search.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="forum/chats/messages" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/messages.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="scrollStop" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/scrollStop.js"></script></head>
+<body class="page-topic page-topic-27562 page-topic-Tao-ung-dung-Java-EE-trong-Netbeans skin-noskin">
+<nav id="menu" class=" slideout-menu">
+<div class="menu-profile">
+</div>
+<section class="menu-section" data-section="navigation">
+<h3 class="menu-section-title">Điều hướng</h3>
+<ul class="menu-section-list">
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/category/1/dien-dan" title="" data-original-title="Diễn đàn">
+<i class="fa fa-fw fa-weixin"></i>
+<span class="visible-xs-inline">Diễn đàn</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/category/2/ebook" title="" data-original-title="eBook">
+<i class="fa fa-fw fa-book"></i>
+<span class="visible-xs-inline">eBook</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/category/3/github" title="" data-original-title="Github">
+<i class="fa fa-fw fa-github"></i>
+<span class="visible-xs-inline">Github</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="http://git.laptrinhx.com/" title="" target="_blank" data-original-title="Top Trending">
+<i class="fa fa-fw fa-git"></i>
+<span class="visible-xs-inline">Top Trending</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="http://doc.laptrinhx.com/" title="" target="_blank" data-original-title="DevDocs">
+<i class="fa fa-fw fa-wpforms"></i>
+<span class="visible-xs-inline">DevDocs</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/category/4/bitcoin" title="" data-original-title="Bitcoin">
+<i class="fa fa-fw fa-bitcoin"></i>
+<span class="visible-xs-inline">Bitcoin</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/tags" title="" data-original-title="Tags">
+<i class="fa fa-fw fa-tags"></i>
+<span class="visible-xs-inline">Tags</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="http://raoxyz.com/" title="" target="_blank" data-original-title="RaoXYZ">
+<i class="fa fa-fw fa-bullhorn"></i>
+<span class="visible-xs-inline">RaoXYZ</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="http://congtyaz.com/" title="" target="_blank" data-original-title="CongtyAZ">
+<i class="fa fa-fw fa-sort-alpha-asc"></i>
+<span class="visible-xs-inline">CongtyAZ</span>
+</a>
+</li>
+
+<a href="https://laptrinhx.com/search">
+<i class="fa fa-search fa-fw"></i> Tìm kiếm
+</a>
+
+<li>
+<a href="https://laptrinhx.com/register">
+<i class="fa fa-pencil visible-xs-inline"></i>
+<span>Đăng ký</span>
+</a>
+</li>
+<li>
+<a href="https://laptrinhx.com/login">
+<i class="fa fa-sign-in visible-xs-inline"></i>
+<span>Đăng nhập</span>
+</a>
+</li>
+</ul>
+</section>
+</nav>
+<main id="panel" class=" slideout-panel">
+<nav class="navbar navbar-default navbar-fixed-top header" id="header-menu" component="navbar">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" id="mobile-menu">
+<span component="notifications/icon" class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href="https://laptrinhx.com/">
+<img alt="laptrinhx" class=" forum-logo" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/CD5YFuO.gif">
+</a>
+<div component="navbar/title" class="visible-xs hidden">
+<span class="">Tạo ứng dụng Java EE trong Netbeans</span>
+</div>
+</div>
+<div id="nav-dropdown" class="hidden-xs">
+<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+<li>
+<a href="https://laptrinhx.com/register">
+<i class="fa fa-pencil visible-xs-inline"></i>
+<span>Đăng ký</span>
+</a>
+</li>
+<li>
+<a href="https://laptrinhx.com/login">
+<i class="fa fa-sign-in visible-xs-inline"></i>
+<span>Đăng nhập</span>
+</a>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li data-original-title="" title="">
+<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET">
+<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Tìm kiếm"></i></button>
+<div class="hidden" id="search-fields">
+<div class="form-group">
+<input class="form-control" placeholder="Tìm kiếm" name="query" type="text">
+<a href="#"><i class="fa fa-gears fa-fw advanced-search-link"></i></a>
+</div>
+<button type="submit" class="btn btn-default hide">Tìm kiếm</button>
+</div>
+</form>
+</li>
+<li class="visible-xs" id="search-menu">
+<a href="https://laptrinhx.com/search">
+<i class="fa fa-search fa-fw"></i> Tìm kiếm
+</a>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right hidden-xs">
+<li>
+<a href="#" id="reconnect" class="hide" title="" data-original-title="Connection to LaptrinhX has been lost, attempting to reconnect..."><i class="fa fa-check"></i></a>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right pagination-block visible-lg visible-md ready">
+<li class="dropdown">
+<a><i class="fa fa-angle-double-up pointer fa-fw pagetop"></i></a>
+<a><i class="fa fa-angle-up pointer fa-fw pageup"></i></a>
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="pagination-text">1 trong số 1</span>
+</a>
+<a><i class="fa fa-angle-down pointer fa-fw pagedown"></i></a>
+<a><i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i></a>
+<div class="progress-container">
+<div class="progress-bar" style="width: 74.8852%;"></div>
+</div>
+<ul class="dropdown-menu" role="menu">
+<li>
+<input class="form-control" id="indexInput" placeholder="Nhập khóa" type="text">
+</li>
+</ul>
+</li>
+</ul>
+<ul id="main-nav" class="nav navbar-nav">
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/category/1/dien-dan" title="" data-original-title="Diễn đàn">
+<i class="fa fa-fw fa-weixin"></i>
+<span class="visible-xs-inline">Diễn đàn</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/category/2/ebook" title="" data-original-title="eBook">
+<i class="fa fa-fw fa-book"></i>
+<span class="visible-xs-inline">eBook</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/category/3/github" title="" data-original-title="Github">
+<i class="fa fa-fw fa-github"></i>
+<span class="visible-xs-inline">Github</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="http://git.laptrinhx.com/" title="" target="_blank" data-original-title="Top Trending">
+<i class="fa fa-fw fa-git"></i>
+<span class="visible-xs-inline">Top Trending</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="http://doc.laptrinhx.com/" title="" target="_blank" data-original-title="DevDocs">
+<i class="fa fa-fw fa-wpforms"></i>
+<span class="visible-xs-inline">DevDocs</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/category/4/bitcoin" title="" data-original-title="Bitcoin">
+<i class="fa fa-fw fa-bitcoin"></i>
+<span class="visible-xs-inline">Bitcoin</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="https://laptrinhx.com/tags" title="" data-original-title="Tags">
+<i class="fa fa-fw fa-tags"></i>
+<span class="visible-xs-inline">Tags</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="http://raoxyz.com/" title="" target="_blank" data-original-title="RaoXYZ">
+<i class="fa fa-fw fa-bullhorn"></i>
+<span class="visible-xs-inline">RaoXYZ</span>
+</a>
+</li>
+<li class="">
+<a class="navigation-link" href="http://congtyaz.com/" title="" target="_blank" data-original-title="CongtyAZ">
+<i class="fa fa-fw fa-sort-alpha-asc"></i>
+<span class="visible-xs-inline">CongtyAZ</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container" id="content">
+<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you may not be able to execute some actions.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<ol class="breadcrumb">
+<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://laptrinhx.com/" itemprop="url">
+<span itemprop="title">
+Trang chủ
+</span>
+</a>
+</li>
+<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://laptrinhx.com/category/1/dien-dan" itemprop="url">
+<span itemprop="title">
+Diễn đàn
+</span>
+</a>
+</li>
+<li component="breadcrumb/current" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+<span itemprop="title">
+Tạo ứng dụng Java EE trong Netbeans
+<a target="_blank" href="https://laptrinhx.com/topic/27562.rss"><i class="fa fa-rss-square"></i></a>
+</span>
+</li>
+</ol>
+<div widget-area="header">
+</div>
+<div class="row">
+<div class="topic col-lg-12">
+<h1 component="post/header" class="hidden-xs" itemprop="name">
+<i class="pull-left fa fa-thumb-tack hidden" title="Đã ghim"></i>
+<i class="pull-left fa fa-lock hidden" title="Khóa"></i>
+<i class="pull-left fa fa-arrow-circle-right hidden" title="Chuyển đi"></i>
+<span class="topic-title" component="topic/title">Tạo ứng dụng Java EE trong Netbeans</span>
+</h1>
+<div component="topic/deleted/message" class="alert alert-warning hidden clearfix">
+<span class="pull-left">Chủ đề này đã bị xóa. Chỉ ban quản trị mới xem được.</span>
+<span class="pull-right">
+</span>
+</div>
+<hr class="visible-xs">
+<ul component="topic" class="posts" data-tid="27562" data-cid="1">
+<li component="post" class="" data-index="0" data-pid="27586" data-uid="994" data-timestamp="1491574202000" data-username="yuen" data-userslug="yuen" itemscope="" itemtype="http://schema.org/Comment">
+<a component="post/anchor" data-index="0" name="0"></a>
+<meta itemprop="datePublished" content="2017-04-07T14:10:02.000Z">
+<meta itemprop="dateModified" content="">
+<div class="clearfix post-header">
+<div class="icon pull-left">
+<a href="https://laptrinhx.com/user/yuen">
+<div component="user/picture" data-uid="994" class="user-icon" style="background-color: #e91e63;" data-original-title="" title="">Y</div>
+<i component="user/status" class="fa fa-circle status offline" title="Đang offline"></i>
+</a>
+</div>
+<small class="pull-left">
+<strong>
+<a href="https://laptrinhx.com/user/yuen" itemprop="author" data-username="yuen" data-uid="994">yuen</a>
+</strong>
+<div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+<a class="permalink" href="https://laptrinhx.com/post/27586"><span class="timeago" title="21:10, 7 thg 4, 2017" datetime="21:10, 7 thg 4, 2017">about a year ago</span></a>
+<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+<small data-editor="" component="post/editor" class="hidden">được chỉnh sửa lần cuối bởi <span class="timeago" title="Invalid Date" datetime="Invalid Date">Invalid Date</span></small>
+<span>
+</span>
+</div>
+<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+</small>
+</div>
+<br>
+<div class="content" component="post/content" itemprop="text">
+<h1>Tạo ứng dụng Java EE trong Netbeans</h1>
+<p>Trong tut này, mình sẽ hướng dẫn các bạn tạo và chạy một ứng dụng Java EE trong Netbeans, cũng như sửa một số lỗi hay gặp.</p>
+<p></p><h2>Chuẩn bị</h2><p></p>
+<ul>
+<li>IDE: Netbeans 8.0.2</li>
+<li>Web Server: GlassFish 4.1</li>
+<li>Hệ quản trị CSDL: MySQL </li>
+<li>Hệ điều hành: Windows 7</li>
+</ul>
+<p></p><h2>Bước 1: Tạo Enterprise Application</h2><p></p>
+<p>Đầu tiên, chúng ta chọn <strong>File -&gt; New Project ...</strong> (phím tắt <code>Ctrl + Shift + N</code>), chọn tiếp <strong>Enterprise Application</strong> trong <strong>Java EE</strong>, rồi chọn <strong>Next</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/5NgPKSo.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/5NgPKSo.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>Đặt tên cho ứng dụng, ở đây mình đặt là <strong>Demo</strong>, rồi chọn <strong>Next</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/49vbkF3.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/49vbkF3.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>Đến đây, ta cứ giữ các thông tin mặc định của Netbeans, rồi chọn <strong>Finish</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/V1mg5qS.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/V1mg5qS.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>Chờ một lúc để Netbeans khởi tạo ứng dụng. Ứng dụng của chúng ta sẽ được chia thành 3 module như sau:<br>
+<a class="fluidbox" href="https://i.imgur.com/v4e0aNM.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/v4e0aNM.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p></p><h2>Bước 2: Tạo kết nối với CSDL</h2><p></p>
+<p>Đầu tiên, chúng ta phải start MySQL trong hệ thống trước. </p>
+<p>Sau đó, trong Netbeans, mở tab <strong>Service</strong>, chuột phải <strong>Databases</strong> chọn <strong>New Connection...</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/8yA4QSb.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/8yA4QSb.png" data-state="unloaded" class="img-responsive"></a><a></a> </p>
+<p>Trong phần <strong>Driver</strong>, chọn <strong>MySQL (Connector/J driver)</strong>, rồi chọn <strong>Next</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/2PCeeAZ.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/2PCeeAZ.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Nhập <strong>Password</strong> và <strong>JDBC URL</strong>. Ở đây tên CSDL của mình là <strong>bookstore</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/vJL8RKA.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/vJL8RKA.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Ấn <strong>Test Connection</strong> để kiểm tra kết nối, nếu có thông báo <em>Connection Succeeded</em> thì ta đã kết nối thành công. Sau đó chọn <strong>Next</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/qcj0My8.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/qcj0My8.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Chọn <strong>Next</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/G77L1PH.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/G77L1PH.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Trong <strong>Input connection name</strong>, để cho đỡ lằng nhằng, ta xóa <code>[root on Default schema]</code> trong chuỗi <code>jdbc:mysql://localhost:3306/bookstore?useUnicode=true&amp;characterEncoding=UTF-8 [root on Default schema]</code>:<br>
+<a class="fluidbox" href="https://i.imgur.com/n2tkZf6.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/n2tkZf6.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Cuối cùng chọn <strong>Finish</strong>. </p>
+<p>Nếu như tạo kết nối thành công, ta sẽ thấy tên CSDL là <strong>bookstore</strong> và danh sách các bảng như thế này:<br>
+<a class="fluidbox" href="https://i.imgur.com/BQhh2JO.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/BQhh2JO.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p></p><h2>Bước 3: Tạo các Entity và Session Bean</h2><p></p>
+<p></p><h3>Tạo các Entity</h3><p></p>
+<p>Các bạn mở module <strong>Demo-ejb</strong>, trong <strong>Source Packages</strong> tạo một package mới có tên là <strong>entity</strong> (cái này là tùy chọn, ta đặt gì cũng được). </p>
+<p>Chuột phải package <strong>entity</strong>, chọn <strong>New -&gt; Entity Classes from Database ...</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/9Yujfps.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/9Yujfps.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Trong <strong>Data Source</strong>, chọn <strong>New Data Source ...</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/8PZ63Dw.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/8PZ63Dw.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Nhập <strong>JNDI Name</strong> là <strong>bookstore</strong> (các bạn nhập gì cũng được), <strong>Database Connection</strong> là tên của kết nối đã tạo ở bước 2 <code>jdbc:mysql://localhost:3306/bookstore?useUnicode=true&amp;characterEncoding=UTF-8</code>. Sau đó chọn <strong>OK</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/YYLOPI0.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/YYLOPI0.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Netbeans sẽ load tất cả các bảng trong DB bookstore:<br>
+<a class="fluidbox" href="https://i.imgur.com/KIPSMLt.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/KIPSMLt.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Ta sẽ add những bảng muốn chuyển sang Entity. Ở đây, mình sẽ add tất cả bằng cách chọn <strong>Add All &gt;&gt;</strong>. Sau đó chọn <strong>Next</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/pCfJ7m3.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/pCfJ7m3.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Chọn <strong>Next</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/b5Idsp9.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/b5Idsp9.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Chọn <strong>Collection Type</strong> là <strong>java.util.List</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/mi7dKAX.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/mi7dKAX.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Ta chờ một lúc đợi Netbeans sinh các entity, và đây là kết quả:<br>
+<a class="fluidbox" href="https://i.imgur.com/PGOwU3Z.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/PGOwU3Z.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p></p><h3>Tạo các Session Bean</h3><p></p>
+<p>Vẫn ở trong <strong>Demo-ejb</strong>, trong <strong>Source Packages</strong>, ta tạo một package mới có tên là <strong>sessionbean</strong> (cái này là tùy chọn, ta đặt gì cũng được).</p>
+<p>Chuột phải package <strong>sessionbean</strong>, chọn <strong>Session Beans from Entity Classes ...</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/K9Aw7ce.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/K9Aw7ce.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Netbeans sẽ load tất cả các entity hiện có:<br>
+<a class="fluidbox" href="https://i.imgur.com/CtrAvjy.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/CtrAvjy.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Chọn <strong>Add All &gt;&gt;</strong>, rồi chọn <strong>Next</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/iJHxXZq.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/iJHxXZq.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Vì sau này, ta sẽ sử dụng các session bean ngay trong enterprise application hiện tại, nên ta sẽ chọn <strong>Local</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/9jTZHEh.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/9jTZHEh.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Cuối cùng chọn <strong>Finish</strong>.</p>
+<p>Ta chờ một lúc đợi Netbeans sinh các session bean, và đây là kết quả:<br>
+<a class="fluidbox" href="https://i.imgur.com/QDLhamy.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/QDLhamy.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Với mỗi một entity, Netbeans sẽ sinh một interface <code>FacadeLocal</code> và một lớp <code>Facade</code>. Ngoài ra, ta còn có một lớp <code>AbstractFacade.java</code>.</p>
+<p></p><h2>Bước 4: Deploy module EJB</h2><p></p>
+<p></p><h3>Deploy module EJB</h3><p></p>
+<p>Nhiệm vụ tiếp theo của chúng ta là phải Deploy module <strong>Demo-ejb</strong> để module <strong>Demo-war</strong> có thể sử dụng được các entity và session bean.</p>
+<p>Trước hết, chuột phải <strong>Demo-ejb</strong>, chọn <strong>Clean and Build</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/IrhtKyq.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/IrhtKyq.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Nếu như hệ thống thông báo Clean and Build thành công, ta thấy trong <strong>Demo-ejb</strong> sẽ có thêm <strong>Generated Sources (ap-source-output)</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/laJe5Ow.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/laJe5Ow.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Chuột phải <strong>Demo-ejb</strong>, chọn <strong>Deploy</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/McOq5KN.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/McOq5KN.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p></p><h3>Sửa lỗi thường gặp khi dùng GlassFish 4.1</h3><p></p>
+<p>Với phiên bản GlassFish 4.1, ta rất dễ gặp lỗi như này khi deploy EJB:<br>
+<a class="fluidbox" href="https://i.imgur.com/oyYBewr.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/a" alt="enter image description here" data-src="https://i.imgur.com/oyYBewr.png" data-state="unloaded" class="img-responsive"></a><a></a></p>
+<p>Ta sẽ sửa lỗi này theo các bước như sau:</p>
+<p></p><h4><strong>glassfish-resource.xml</strong></h4><p></p>
+<p>Các bạn mở file <strong>glassfish-resources.xml</strong> trong <strong>Server Resources</strong> của module <strong>Demo-ejb</strong>:</p>
+<p>&lt;pre&gt;&lt;code class="xml"&gt;&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+&lt;!DOCTYPE resources PUBLIC "-<a href="https://glassfish.org//DTD">//GlassFish.org//DTD</a> GlassFish Application Server 3.1 Resource Definitions//EN" "<a href="http://glassfish.org/dtds/glassfish-resources_1_5.dtd" rel="nofollow">http://glassfish.org/dtds/glassfish-resources_1_5.dtd</a>"&gt;<br>
+&lt;resources&gt;<br>
+&lt;jdbc-connection-pool allow-non-component-callers="false" 
+associate-with-thread="false" connection-creation-retry-attempts="0" 
+connection-creation-retry-interval-in-seconds="10" 
+connection-leak-reclaim="false" connection-leak-timeout-in-seconds="0" 
+connection-validation-method="auto-commit" 
+datasource-classname="com.mysql.jdbc.jdbc2.optional.MysqlDataSource" 
+fail-all-connections="false" idle-timeout-in-seconds="300" 
+is-connection-validation-required="false" 
+is-isolation-level-guaranteed="true" lazy-connection-association="false"
+ lazy-connection-enlistment="false" match-connections="false" 
+max-connection-usage-count="0" max-pool-size="32" 
+max-wait-time-in-millis="60000" name="mysql_bookstore_rootPool" 
+non-transactional-connections="false" pool-resize-quantity="2" 
+res-type="javax.sql.DataSource" statement-timeout-in-seconds="-1" 
+steady-pool-size="8" validate-atmost-once-period-in-seconds="0" 
+wrap-jdbc-objects="false"&gt;<br>
+&lt;property name="serverName" value="localhost"/&gt;<br>
+&lt;property name="portNumber" value="3306"/&gt;<br>
+&lt;property name="databaseName" value="bookstore"/&gt;<br>
+&lt;property name="User" value="root"/&gt;<br>
+&lt;property name="Password" value="root"/&gt;<br>
+&lt;property name="URL" value="jdbc:mysql://localhost:3306/bookstore?useUnicode=true&amp;characterEncoding=UTF-8"/&gt;<br>
+&lt;property name="driverClass" value="com.mysql.jdbc.Driver"/&gt;<br>
+&lt;/jdbc-connection-pool&gt;<br>
+&lt;jdbc-resource enabled="true" jndi-name="bookstore" object-type="user" pool-name="mysql_bookstore_rootPool"/&gt;<br>
+&lt;/resources&gt;<br>
+&lt;/code&gt;&lt;/pre&gt;</p>
+<p>Các bạn chú ý dòng này:</p>
+<p>&lt;pre&gt;&lt;code class="xml"&gt;&lt;jdbc-resource enabled="true" 
+jndi-name="bookstore" object-type="user" 
+pool-name="mysql_bookstore_rootPool"/&gt;<br>
+&lt;/code&gt;&lt;/pre&gt;</p>
+<p>Ta sẽ tạo một connection pool có tên là <strong>mysql_bookstore_rootPool</strong> (trùng với giá trị của thuộc tính <strong>pool-name</strong>) và một JDBC resource có tên là <strong>bookstore</strong> (trùng với giá trị của thuộc tính <strong>jndi-name</strong>) kết nối vào connection pool trên.</p>
+<p></p><h4>Tạo connection pool</h4><p></p>
+<p>Ở đây mình sẽ hướng dẫn các bạn tạo connection pool bằng console. 
+Cách này có vẻ tỉ lệ thành công cao hơn cách dùng giao diện GUI của 
+GlassFish.</p>
+<p>Các bạn vào trong thư mục <strong>C:\Program Files\glassfish-4.1\glassfish\lib</strong>, kiểm tra xem đã có thư viện <strong>mysql-connector-java</strong> chưa. Nếu chưa có, các bạn:</p>
+<ul>
+<li>Vào tab <strong>Service -&gt; Servers</strong>, tắt GlassFish đi.</li>
+<li>Vào địa chỉ <a href="https://dev.mysql.com/downloads/connector/j/5.1.html">https://dev.mysql.com/downloads/connector/j/5.1.html</a>, tải file <strong>mysql-connector-java-5.1.41.zip</strong>. Sau đó giải nén, copy file <strong>mysql-connector-java-5.1.41-bin.jar</strong> vào thư mục <strong>C:\Program Files\glassfish-4.1\glassfish\lib</strong>
+</li>
+<li>Quay lại <strong>Service -&gt; Servers</strong>, bật GlassFish.</li>
+</ul>
+<p>Vào thư mục <strong>C:\Program Files\glassfish-4.1.1\glassfish\bin</strong>, chạy file <strong>asadmin.bat</strong>. Nhập dòng lệnh sau: <br>
+<code>create-jdbc-connection-pool --datasourceclassname com.mysql.jdbc.jdbc2.optional.MysqlDataSource mysql_bookstore_rootPool</code> để tạo connection pool có tên là <strong>mysql_bookstore_rootPool</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/ZcFQE5D.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/ZcFQE5D.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>Ta vào địa chỉ <code>http://localhost:4848</code>, chọn <strong>Resources -&gt; JDBC -&gt; JDBC Connection Pool</strong> kiểm tra xem connection pool đã được tạo chưa:<br>
+<a class="fluidbox" href="https://i.imgur.com/GdkGbd3.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/GdkGbd3.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>OK, như vậy là tạo thành công!</p>
+<p>Click vào connection pool <strong>mysql_bookstore_rootPool</strong>. Trong tab <strong>General</strong>, ta chọn <strong>Resource Type</strong> là <strong>javax.sql.DataSource</strong>, rồi ấn nút <strong>Save</strong> để lưu:<br>
+<a class="fluidbox" href="https://i.imgur.com/QdAKprE.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/QdAKprE.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>Nếu lưu thành công, các bạn chuyển sang tab <strong>Additional Properties</strong>, thêm các thuộc tính sau (các bạn ấn nút <strong>Add Property</strong> để thêm mới một thuộc tính):<br>
+<a class="fluidbox" href="https://i.imgur.com/c1khpF1.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/c1khpF1.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>Trong đó:</p>
+<ul>
+<li>
+<strong>User</strong> và <strong>Password</strong> là username và password đăng nhập MySQL.</li>
+<li>
+<strong>URL</strong> là chuỗi kết nối ta đã tạo ở bước 2.</li>
+</ul>
+<p>Các bạn ấn nút <strong>Save</strong> để lưu lại.</p>
+<p>Quay lại tab <strong>General</strong>, ấn nút <strong>Ping</strong> để xem connection pool đã hoạt động được chưa. Nếu hiện lên thông báo <strong>Ping Succeedded</strong> thì là OK rồi:<br>
+<a class="fluidbox" href="https://i.imgur.com/oaKZU2N.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/oaKZU2N.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p></p><h4>Tạo JDBC Resource</h4><p></p>
+<p>Vẫn ở trong giao diện console, các bạn nhập dòng lệnh sau:<br>
+<code>create-jdbc-resource --connectionpoolid mysql_bookstore_rootPool bookstore</code> để tạo JDBC Resource có tên là <strong>bookstore</strong> kết nối với connection pool <strong>mysql_bookstore_rootPool</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/yBbHSad.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/yBbHSad.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>Quay lại deploy module <strong>Demo-ejb</strong>, ta sẽ thấy deploy thành công.</p>
+<p>Nếu như vẫn không deploy được, các bạn thử mở file <strong>persistence.xml</strong> trong <strong>Configuration Files</strong> của <strong>Demo-ejb</strong>, chọn tab <strong>Source</strong>, kiểm tra xem giá trị trong thẻ <code>&lt;jta-data-source&gt;</code> có trùng với tên của JDBC Resource ta vừa tạo bên trên không (<strong>bookstore</strong>):<br>
+<code>&lt;jta-data-source&gt;bookstore&lt;/jta-data-source&gt;</code></p>
+<p>Có một chú ý là, trong quá trình phát triển ứng dụng, ta chỉ cần 
+deploy module EJB một lần duy nhất, vì Netbeans sẽ deploy hộ chúng ta 
+khi ứng dụng có thay đổi.</p>
+<p></p><h2>Bước 5: Tích hợp JSF vào Demo-war và chạy thử</h2><p></p>
+<p></p><h3>Tích hợp JSF</h3><p></p>
+<p>Để thêm framework JSF vào module <strong>Demo-war</strong>, ta chuột phải <strong>Demo-war</strong>, chọn <strong>Properties</strong>. Trong tab <strong>Frameworks</strong>, ta add <strong>JavaServer Faces</strong>, rồi chọn <strong>OK</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/4KPOIyJ.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/4KPOIyJ.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>Chọn phiên bản <strong>JSF 2.2</strong>, rồi chọn <strong>OK</strong>:<br>
+<a class="fluidbox" href="https://i.imgur.com/5Q2GvaP.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/5Q2GvaP.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p></p><h3>EJB và JSF</h3><p></p>
+<p>Ở đây mình sẽ thử insert vào DB một tác giả có tên là Kim Dung và sẽ in ra màn hình tên của tác giả vừa insert đó.</p>
+<p>Bảng <strong>Author</strong> của mình chỉ gồm 2 trường là <strong>ID</strong> và <strong>name</strong>.</p>
+<p>Đầu tiên, ta tạo một Managed Bean có tên là <strong>Hello</strong> có nội dung như sau:</p>
+<p>&lt;pre&gt;&lt;code class="java"&gt;import entity.Author;<br>
+import java.io.Serializable;<br>
+import javax.annotation.PostConstruct;<br>
+import javax.ejb.EJB;<br>
+import javax.faces.bean.ManagedBean;<br>
+import javax.faces.bean.SessionScoped;<br>
+import sessionbean.AuthorFacadeLocal;<br>
+@ManagedBean(name = "hello")<br>
+@SessionScoped<br>
+public class Hello implements Serializable {<br>
+private Author author;<br>
+@EJB<br>
+AuthorFacadeLocal authorDAO;<br>
+@PostConstruct<br>
+public void init() {<br>
+authorDAO.create(new Author(1, "Kim Dung"));<br>
+author = authorDAO.find(1);<br>
+}<br>
+public Hello() {<br>
+}<br>
+public Author getAuthor() {<br>
+return author;<br>
+}<br>
+public void setAuthor(Author author) {<br>
+this.author = author;<br>
+}<br>
+}<br>
+&lt;/code&gt;&lt;/pre&gt;</p>
+<p>Trong file <code>index.xhtml</code>, mình sẽ in ra tên tác giả vừa insert:</p>
+<p>&lt;pre&gt;&lt;code class="html"&gt;&lt;?xml version='1.0' encoding='UTF-8' ?&gt;<br>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "<a href="https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" rel="nofollow">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</a>"&gt;<br>
+&lt;html xmlns="<a href="https://www.w3.org/1999/xhtml" rel="nofollow">http://www.w3.org/1999/xhtml</a>"<br>
+xmlns:h="<a href="http://xmlns.jcp.org/jsf/html" rel="nofollow">http://xmlns.jcp.org/jsf/html</a>"&gt;<br>
+&lt;h:head&gt;<br>
+&lt;title&gt;Facelet Title&lt;/title&gt;<br>
+&lt;/h:head&gt;<br>
+&lt;h:body&gt;<br>
+Hello from #{<a href="http://hello.author.name/" rel="nofollow">hello.author.name</a>}<br>
+&lt;/h:body&gt;<br>
+&lt;/html&gt;<br>
+&lt;/code&gt;&lt;/pre&gt;</p>
+<p></p><h3>Run project</h3><p></p>
+<p>Để run project, các bạn click vào tên module <strong>Demo</strong> (module hình tam giác màu xanh), tức là click một cái để sao cho cái tên <strong>Demo</strong> chuyển sang màu xanh, rồi ấn nút <strong>Run</strong> (F6). Đây là kết quả của chúng ta:<br>
+<a class="fluidbox" href="https://i.imgur.com/gZTudvV.png"><img src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/gZTudvV.png" alt="enter image description here" data-state="loaded" class="img-responsive"></a><a></a></p>
+<p>Nguồn: Kipalog</p>
+</div>
+<div class="clearfix post-footer">
+<small class="pull-right">
+<span class="post-tools">
+<a component="post/reply" href="#" class="no-select hidden">Trả lời</a>
+<a component="post/quote" href="#" class="no-select hidden">Trích dẫn</a>
+</span>
+<span component="post/tools" class="dropdown moderator-tools bottom-sheet ">
+<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+<ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+</span>
+</small>
+<a component="post/reply-count" href="#" class="threaded-replies no-select hidden">
+<span component="post/reply-count/avatars" class="avatars ">
+</span>
+<span class="replies-count" component="post/reply-count/text" data-replies="0">1 Reply</span>
+<span class="replies-last hidden-xs">Trả lời cuối cùng <span class="timeago" title="Invalid Date" datetime="Invalid Date">Invalid Date</span></span>
+<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+</a>
+</div>
+<hr>
+<div class="post-bar-placeholder"></div>
+</li>
+</ul>
+<div class="post-bar">
+<div class="clearfix">
+<div class="tags pull-left">
+<a href="https://laptrinhx.com/tags/Java">
+<span class="tag-item" data-tag="Java" style="">Java</span>
+<span class="tag-topic-count human-readable-number" title="402">402</span></a>
+</div>
+<div component="topic/browsing-users">
+</div>
+<div class="topic-main-buttons pull-right">
+<span class="loading-indicator btn pull-left hidden" done="0" style="display: none;">
+<span class="hidden-xs">Tải thêm các bài gửi khác</span> <i class="fa fa-refresh fa-spin"></i>
+</span>
+<div class="stats hidden-xs">
+<span component="topic/post-count" class="human-readable-number" title="1">1</span><br>
+<small>Số bài viết</small>
+</div>
+<div class="stats hidden-xs">
+<span class="human-readable-number" title="893">893</span><br>
+<small>Lượt xem</small>
+</div>
+<div component="topic/reply/container" class="btn-group action-bar hidden">
+<a href="https://laptrinhx.com/compose?tid=27562&amp;title=T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans" class="btn btn-primary" component="topic/reply" data-ajaxify="false" role="button">Trả lời</a>
+<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+<span class="caret"></span>
+</button>
+<ul class="dropdown-menu pull-right" role="menu">
+<li><a href="#" component="topic/reply-as-topic">Trả lời dưới dạng chủ đề</a></li>
+</ul>
+</div>
+<a component="topic/reply/guest" href="https://laptrinhx.com/login" class="btn btn-primary">Hãy đăng nhập để trả lời</a>
+<div class="pull-right">&nbsp;
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="visible-xs visible-sm pagination-block text-center ready">
+<div class="progress-bar" style="width: 74.8852%;"></div>
+<div class="wrapper">
+<i class="fa fa-2x fa-angle-double-up pointer fa-fw pagetop"></i>
+<i class="fa fa-2x fa-angle-up pointer fa-fw pageup"></i>
+<span class="pagination-text">1 trong số 1</span>
+<i class="fa fa-2x fa-angle-down pointer fa-fw pagedown"></i>
+<i class="fa fa-2x fa-angle-double-down pointer fa-fw pagebottom"></i>
+</div>
+</div>
+</div>
+<div widget-area="sidebar" class="col-lg-3 col-sm-12 hidden">
+</div>
+</div>
+<div widget-area="footer">
+</div>
+<noscript>
+	<div component="pagination" class="text-center pagination-container hidden">
+	<ul class="pagination hidden-xs">
+		<li class="previous pull-left disabled">
+			<a href="?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+		
+
+		<li class="next pull-right disabled">
+			<a href="?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+
+	<ul class="pagination hidden-sm hidden-md hidden-lg">
+		<li class="first disabled">
+			<a href="?page=1" data-page="1"><i class="fa fa-fast-backward"></i> </a>
+		</li>
+
+		<li class="previous disabled">
+			<a href="?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+		<li component="pagination/select-page" class="page select-page">
+			<a href="#">1 / 1</a>
+		</li>
+
+		<li class="next disabled">
+			<a href="?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+
+		<li class="last disabled">
+			<a href="?page=1" data-page="1"><i class="fa fa-fast-forward"></i> </a>
+		</li>
+	</ul>
+</div>
+</noscript>
+ </div>
+</main>
+<div class="topic-search hidden">
+<div class="btn-group">
+<button type="button" class="btn btn-default count"></button>
+<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+</div>
+</div>
+<div component="toaster/tray" class="alert-window">
+<div id="reconnect-alert" class="alert alert-dismissable alert-warning clearfix" component="toaster/toast" style="display: none;">
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+<p>Có vẻ như bạn đã mất kết nối tới LaptrinhX, vui lòng đợi một lúc để chúng tôi thử kết nối lại.</p>
+</div>
+</div>
+<script async="" src="T%E1%BA%A1o%20%E1%BB%A9ng%20d%E1%BB%A5ng%20Java%20EE%20trong%20Netbeans%20%20%20Laptrinh%20%20%20D%E1%BB%8Bch%20v%E1%BB%A5%20chia%20s%E1%BA%BB%20ki%E1%BA%BFn%20th%E1%BB%A9c%20v%E1%BB%81%20l%E1%BA%ADp%20tr%C3%ACnh%20mi%E1%BB%85n%20ph%C3%AD_files/nodebb.js"></script>
+<script>
+		window.addEventListener('load', function () {
+			require(['forum/footer']);
+		});
+	</script>
+<div class="hide">
+<script>
+	window.addEventListener('load', function () {
+		define('/assets/templates/500.js', function () {
+			function compiled(helpers, context, get, iter, helper) {
+				return '<div class="alert alert-danger">\n\t<strong>Internal Error.</strong>\n\t<p>Úi chà! Có vẻ như có trục trặc rồi!</p>\n\t<p>' + 
+					helpers.__escape(get(context && context['path'])) + '</p>\n\t' + 
+					(get(context && context['error']) ? '<p>' + helpers.__escape(get(context && context['error'])) + '</p>' : '') + '\n\n\t' + 
+					(get(context && context['returnLink']) ? '\n\t<p>Press back to return to the previous page</p>\n\t' : '') + '\n</div>\n';
+			}
+
+			return compiled;
+		});
+	});
+</script>
+</div>
+
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src=""><div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div><div id="taskbar" class="taskbar navbar-fixed-bottom">
+	<div class="navbar-inner"><ul class="nav navbar-nav pull-right"></ul></div>
+</div></body></html>

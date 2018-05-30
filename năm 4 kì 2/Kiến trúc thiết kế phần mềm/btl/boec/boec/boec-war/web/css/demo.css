@@ -1,0 +1,50 @@
+.FormSearch{
+  position: absolute;
+  top: auto;
+  bottom: 10px;
+  left: 50px;
+  font-size: 15px;
+}
+.UlSearch{
+  z-index : 1;
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  width: 150px;
+  height: auto;
+  border: 1px solid rgb(225,225,225);
+  background-color: rgb(255,255,255);
+}
+.UlSearch li{
+  margin-top: 5px;
+  padding-left: 14px;
+  cursor: pointer;
+}
+.UlSearch li:hover{
+  background-color: rgb(211,239,255);
+}
+#ButtonSearchChoice{
+  font-size: 15px;
+  display: table-cell;
+  margin: 0px;
+  background-color: rgb(255,255,255);
+  padding: 5px 15px 5px 15px;
+}
+.InputSearch{
+  font-size: 15px;
+  padding: 4px 0px 4px 14px;
+  border: 2px solid rgb(199,199,199);
+  width: 234px;
+}
+#ButtonSearchSubmit{
+  font-size: 15px;
+  border: 1px solid rgb(223,225,225);
+  background-color: rgb(255,255,255);
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+#ButtonSearchSubmit:hover{
+  background-color: rgb(237,238,242);
+}
