@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_weight="1"
+        android:id="@+id/ln_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorActionbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s70dp"
+            android:background="@color/colorActionbar_"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="@dimen/s20dp"
+                android:src="@drawable/ic_back" />
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoMedium
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="4"
+                android:text="@string/messenger"
+                android:textColor="#111"
+                android:textSize="@dimen/s28sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s70dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s1dp"
+                android:background="#cccccc" />
+
+            <LinearLayout
+                android:id="@+id/ln_re"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/s10dp"
+                android:paddingTop="@dimen/s10dp">
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s70dp"
+                android:layout_marginLeft="@dimen/s10dp"
+                android:layout_marginRight="@dimen/s10dp">
+
+                <EditText
+                    android:id="@+id/ed_input_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/s30dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/input_contact" />
+
+                <ImageView
+                    android:id="@+id/iv_add_contact"
+                    android:layout_width="@dimen/s40dp"
+                    android:layout_height="@dimen/s40dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:src="@drawable/ic_add_contact" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s1dp"
+                android:background="#cccccc" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s70dp"
+
+                android:layout_weight="1"
+                android:background="@color/colorActionbar"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/s16dp"
+                    android:src="@drawable/ic_link"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/ed_input_sms"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/input"
+                    android:padding="@dimen/s10dp"
+                    android:textColorHint="@color/colorTextLidht1"
+                    android:textSize="@dimen/s24sp" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/s15dp"
+                    android:src="@drawable/ic_icon"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/iv_send"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/s5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/background_selector_button"
+                    android:gravity="center"
+                    android:text="@string/send"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/s26sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/lnads"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"></RelativeLayout>
+</LinearLayout>

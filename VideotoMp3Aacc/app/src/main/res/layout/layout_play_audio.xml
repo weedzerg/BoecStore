@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/s35dp"
+    android:layout_marginRight="@dimen/s35dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_border"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/s30dp"
+        android:paddingLeft="@dimen/s20dp"
+        android:paddingRight="@dimen/s20dp"
+        android:paddingTop="@dimen/s30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/s20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/s85dp"
+                android:layout_height="@dimen/s85dp"
+                android:src="@drawable/ic_avar_press" />
+
+            <com.media.convert.videotomp3aacc.utils.FontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s20dp"
+                android:text="Audio"
+                android:textSize="@dimen/s45sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/gif_"
+            android:src="@drawable/giphy"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/s300dp"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s65dp"
+        android:layout_marginTop="@dimen/s20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/s20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="@dimen/s10dp"
+            android:paddingTop="@dimen/s10dp"
+            android:text="@string/cancel"
+            android:textColor="#fff"
+            android:textSize="@dimen/s22sp" />
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/s20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="@dimen/s10dp"
+            android:paddingTop="@dimen/s10dp"
+            android:text="@string/ringtone"
+            android:textColor="#fff"
+            android:textSize="@dimen/s22sp" />
+    </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context="com.media.vid.video_speed.activities.SlideVideoActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/s20dp"
+        android:layout_marginRight="@dimen/s20dp"
+        android:layout_marginTop="@dimen/s30dp"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/tv_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/s16dp"
+            android:textSize="@dimen/s22sp" />
+
+        <VideoView
+            android:layout_gravity="center"
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/s20dp"
+            android:layout_marginRight="@dimen/s20dp"
+            android:layout_marginTop="@dimen/s25dp"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:id="@+id/ln_fb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/s70dp"
+                    android:layout_height="@dimen/s70dp"
+                    android:src="@drawable/ic_fb" />
+
+                <com.media.vid.video_speed.utils.TextRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/s10dp"
+                    android:gravity="center"
+                    android:text="Facebook"
+                    android:textSize="@dimen/s20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_in"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/s70dp"
+                    android:layout_height="@dimen/s70dp"
+                    android:src="@drawable/ic_in" />
+
+                <com.media.vid.video_speed.utils.TextRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/s10dp"
+                    android:gravity="center"
+                    android:text="Instagram"
+                    android:textSize="@dimen/s20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_more"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/s70dp"
+                    android:layout_height="@dimen/s70dp"
+                    android:src="@drawable/ic_more" />
+
+                <com.media.vid.video_speed.utils.TextRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/s10dp"
+                    android:gravity="center"
+                    android:text="More"
+                    android:textSize="@dimen/s20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_ads"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s70dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:visibility="gone"></RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rsb="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.media.convert.videotomp3aacc.activities.ConvertActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <include layout="@layout/toolbar_layout" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/s20dp"
+                android:layout_marginRight="@dimen/s20dp"
+                android:layout_marginTop="@dimen/s20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <VideoView
+                    android:id="@+id/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s8dp"
+                android:layout_marginRight="@dimen/s8dp"
+                android:orientation="vertical">
+
+                <org.florescu.android.rangeseekbar.RangeSeekBar
+                    android:id="@+id/sb_seek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:showLabels="false"
+                    rsb:activeColor="@color/colortext"
+                    rsb:textAboveThumbsColor="@color/colortext" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="00:00:00"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/s18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_second_cut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/s20sp" />
+
+                    <TextView
+                        android:id="@+id/tv_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="00:01:00"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/s18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s16dp"
+                android:layout_marginRight="@dimen/s16dp"
+                android:layout_marginTop="@dimen/s20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/format"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/s22sp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/s16dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <LinearLayout
+
+                            android:id="@+id/ln_formatmp3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/s8dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_checkmp3"
+                                android:layout_width="@dimen/s30dp"
+                                android:layout_height="@dimen/s30dp"
+                                android:src="@drawable/ic_radio" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/s8dp"
+                                android:text="MP3"
+                                android:textColor="@color/colortext" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ln_formataac"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/s30dp"
+                            android:layout_marginTop="@dimen/s8dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_checkaac"
+                                android:layout_width="@dimen/s30dp"
+                                android:layout_height="@dimen/s30dp"
+                                android:src="@drawable/ic_unradio" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/s8dp"
+                                android:text="AAC"
+                                android:textColor="@color/colortext" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/s50dp"
+                        android:layout_marginBottom="@dimen/s25dp"
+                        android:layout_marginTop="@dimen/s25dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/format"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/s22sp" />
+
+                        <Spinner
+                            android:id="@+id/sp_audio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/s16dp"
+                            android:gravity="center_vertical"></Spinner>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ln_quality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/s16dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/quality"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/s22sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/s16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                                android:id="@+id/sb_quality"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/s10dp"
+                                android:layout_weight="1"
+                                app:dsb_indicatorColor="@color/colorAccent"
+                                app:dsb_indicatorTextAppearance="@color/colortext"
+                                app:dsb_max="3"
+                                app:dsb_min="1"
+                                app:dsb_progressColor="@color/colorAccent"
+                                app:dsb_rippleColor="@color/colorAccent"
+                                app:dsb_trackColor="@color/colorAccent" />
+
+                            <TextView
+                                android:id="@+id/tv_quality"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/s20dp"
+                                android:paddingRight="@dimen/s20dp"
+                                android:text="48 Kpbs"
+                                android:textColor="@color/colortext"
+                                android:textSize="@dimen/s20sp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s120dp"
+                android:layout_marginBottom="@dimen/s20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+
+                    android:id="@+id/ln_convert"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/s80dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <com.media.convert.videotomp3aacc.utils.FontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/s70dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/s40dp"
+                        android:background="@drawable/bt_selector"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/s10dp"
+                        android:text="@string/convert_audio"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/s40sp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/s85dp"
+                        android:layout_height="@dimen/s85dp"
+                        android:src="@drawable/videotoaudio_selector" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+
+            android:id="@+id/layout_ads"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="gone"></RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

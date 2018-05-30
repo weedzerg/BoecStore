@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Whistle Action</string>
+    <string name="find_phone">Tìm điện thoại</string>
+    <string name="call_phone">Quay số nhanh</string>
+    <string name="camera">Máy ảnh</string>
+    <string name="whistle">Huýt sáo</string>
+    <string name="clap">Vỗ tay</string>
+    <string name="ring">Chuông</string>
+    <string name="flash">Đèn flash</string>
+    <string name="number_phone">Liên hệ</string>
+    <string name="sound_action">WHISTLE ACTION</string>
+    <string name="inputnumber">nhập số điện thoại</string>
+    <string name="option">Chỉ được một lựa chọn</string>
+    <string name="hdchon">Hành động đã được chọn</string>
+    <string name="cameraopen">Máy ảnh mở</string>
+    <string name="calling">Cuộc gọi đi</string>
+    <string name="turnoffmp3">Tắt nhạc chuông</string>
+    <string name="ringtone">Nhạc chuông</string>
+    <string name="ok">Đồng ý</string>
+    <string name="cancel">Hủy</string>
+</resources>

@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context="com.galaxy.s8.messagepro.messagergalaxys8.fragments.ContactFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ListView
+        android:id="@+id/lsview_contact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+    <ImageView
+        android:id="@+id/iv_new_sms_contact"
+        android:layout_width="@dimen/s80dp"
+        android:layout_height="@dimen/s80dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/s16dp"
+        android:src="@drawable/ic_new_sms"
+        android:visibility="visible" />
+
+</FrameLayout>

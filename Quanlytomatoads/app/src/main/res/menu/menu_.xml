@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/sortime"
+        android:title="Sắp xếp theo thời gian"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/suadiem"
+        app:showAsAction="never"
+        android:title="Thông tin user"
+        />
+    <item
+        android:id="@+id/logout"
+        app:showAsAction="never"
+        android:title="Đăng xuất"
+        />
+    <item
+        android:id="@+id/mnsearch"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:title="Tìm kiếm"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        />
+
+</menu>

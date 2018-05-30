@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Reverse Video</string>
+    <string name="share_gif">Share Gif</string>
+    <string name="fb_notavainle">Facebook not avaible</string>
+    <string name="is_notavaible">Instagram not avaible</string>
+    <string name="contentrate">If you enjoy this app. Please take a monent to rate this app. It wan\'t take more than a minute. Thank you for your support</string>
+    <string name="rate_this_app">Rate app Reverse Video</string>
+    <string name="not_now">Not now!</string>
+    <string name="rate">Rate!</string>
+    <string name="capture_video">Capture Video</string>
+    <string name="edit_video">Edit Video</string>
+    <string name="my_video">My Video</string>
+    <string name="rate_app">Rate App!</string>
+    <string name="reverse_video">REVERSE VIDEO</string>
+    <string name="trim_video">Trim Video</string>
+    <string name="erro">Erro!</string>
+    <string name="reverse">Reverse</string>
+    <string name="slow_motion">Slowmotion</string>
+    <string name="wait_for_processing">Wait for processing ...</string>
+    <string name="slide_video">Slide Video</string>
+    <string name="share">Share</string>
+    <string name="save_video">Saved </string>
+    <string name="reversevideo">Reversse video</string>
+</resources>

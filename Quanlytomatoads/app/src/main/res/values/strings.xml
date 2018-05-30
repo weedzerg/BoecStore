@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Manager</string>
+    <string name="facebook_app_id">1041605615940795</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

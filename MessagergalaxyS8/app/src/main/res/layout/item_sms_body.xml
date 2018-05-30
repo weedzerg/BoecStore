@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ln_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <FrameLayout
+                android:layout_width="@dimen/s50dp"
+                android:layout_height="@dimen/s50dp">
+
+                <TextView
+
+                    android:id="@+id/tv_ava_send"
+                    android:layout_width="@dimen/s50dp"
+                    android:layout_height="@dimen/s50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/background_boder_avatar_body"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textSize="@dimen/s28sp"
+                    android:visibility="gone" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_send"
+                    android:layout_width="@dimen/s50dp"
+                    android:layout_height="@dimen/s50dp"
+                    android:src="@mipmap/ic_launcher_round"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegularBlack
+                android:id="@+id/tv_body_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s8dp"
+                android:layout_marginTop="@dimen/s25dp"
+                android:background="@drawable/back_sms_sender"
+                android:maxWidth="@dimen/dp260"
+                android:text="sdjddddddddddddffdskjdkjbdjhbdjhfffk"
+                android:textColor="@color/colorTextBold"
+                android:textSize="@dimen/s22sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/s20dp"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/iv_sim_send"
+                    android:layout_width="@dimen/s20dp"
+                    android:layout_height="@dimen/s20dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/ic_sim2" />
+
+                <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegular
+                    android:id="@+id/tv_date_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="@dimen/s5dp"
+                    android:text="20:04"
+                    android:textSize="@dimen/s16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/s20dp"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/iv_sim_recie"
+                    android:layout_width="@dimen/s20dp"
+                    android:layout_height="@dimen/s20dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/ic_sim2" />
+
+                <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegular
+                    android:id="@+id/tv_date_recie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="@dimen/s5dp"
+                    android:text="20:04"
+                    android:textSize="@dimen/s16sp" />
+
+                <ProgressBar
+                    android:id="@+id/pro_sms_me"
+                    android:layout_width="@dimen/s16dp"
+                    android:layout_height="@dimen/s16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s5dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_sms_fail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="@dimen/s5dp"
+                    android:text="!"
+                    android:textColor="@color/color_theme"
+                    android:textSize="@dimen/s18sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegularBlack
+                android:id="@+id/tv_body_recie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s8dp"
+                android:layout_marginRight="@dimen/s8dp"
+                android:layout_marginTop="@dimen/s25dp"
+                android:background="@drawable/back_sms_me"
+                android:maxWidth="@dimen/dp260"
+                android:text="ukm"
+                android:textColor="@color/colorTextBold"
+                android:textSize="@dimen/s22sp" />
+
+            <FrameLayout
+                android:layout_width="@dimen/s50dp"
+                android:layout_height="@dimen/s50dp">
+
+                <TextView
+                    android:id="@+id/tv_ava_me"
+                    android:layout_width="@dimen/s50dp"
+                    android:layout_height="@dimen/s50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/background_boder_avatar_body"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textSize="@dimen/s28sp"
+                    android:visibility="gone" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+
+                    android:id="@+id/iv_recei"
+                    android:layout_width="@dimen/s50dp"
+                    android:layout_height="@dimen/s50dp"
+                    android:src="@mipmap/ic_launcher_round"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+
+<resources>
+<dimen name="size16dp">24.0dp</dimen>
+<dimen name="size120dp">190.0dp</dimen>
+<dimen name="size5dp">10.25dp</dimen>
+<dimen name="size10dp">16.5dp</dimen>
+<dimen name="size24sp">34.0sp</dimen>
+<dimen name="size15dp">22.75dp</dimen>
+<dimen name="size27sp">37.75sp</dimen>
+<dimen name="size30dp">45.5dp</dimen>
+<dimen name="size40dp">60.0dp</dimen>
+<dimen name="size20sp">35.0sp</dimen>
+<dimen name="size35dp">47.75dp</dimen>
+<dimen name="size20dp">29.0dp</dimen>
+<dimen name="size1dp">3.25dp</dimen>
+<dimen name="size25dp">35.25dp</dimen>
+<dimen name="size18sp">30.5sp</dimen>
+<dimen name="size17sp">29.25sp</dimen>
+<dimen name="size8dp">16.0dp</dimen>
+<dimen name="size280dp">450.0dp</dimen>
+<dimen name="size22sp">35.5sp</dimen>
+<dimen name="size220dp">370.0dp</dimen>
+    <dimen name="size100dp">100dp</dimen>
+</resources>

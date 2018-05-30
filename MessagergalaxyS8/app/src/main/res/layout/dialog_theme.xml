@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_selector">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/s20dp"
+        android:orientation="vertical"
+        android:padding="@dimen/s16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoMediumBlack
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s20dp"
+                android:text="@string/themes"
+                android:textColor="#111"
+                android:textSize="@dimen/s28sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s10dp"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal">
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegularBlack
+                android:id="@+id/tv_not_now"
+                android:layout_width="@dimen/s100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_boder"
+                android:gravity="center"
+                android:padding="@dimen/s10dp"
+               android:layout_marginRight="@dimen/s20dp"
+                android:text="@string/cancel"
+                android:textColor="#111"
+                android:textSize="@dimen/s24sp" />
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegularBlack
+                android:id="@+id/tv_rate_app"
+                android:layout_width="@dimen/s100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/s20dp"
+                android:background="@drawable/background_boder"
+                android:gravity="center"
+                android:padding="@dimen/s10dp"
+                android:text="@string/ok"
+                android:textColor="#111"
+                android:textSize="@dimen/s24sp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/s150dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_selector_contact"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:layout_marginLeft="@dimen/s5dp"
+    android:padding="@dimen/s10dp">
+
+    <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegular
+        android:lines="1"
+        android:id="@+id/tv_name_contact_new_sms"
+        android:layout_width="@dimen/s100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorTextBold"
+        android:textSize="@dimen/s22sp" />
+
+    <ImageView
+        android:layout_width="@dimen/s30dp"
+        android:layout_height="@dimen/s30dp"
+        android:src="@drawable/ic_remove_contact" />
+</LinearLayout>

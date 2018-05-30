@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Video Speed</string>
+    <string name="my_video">Video của bạn</string>
+    <string name="wait_for_processing">Chờ xử lý...</string>
+    <string name="ok">Đồng ý</string>
+    <string name="notringtone">Nhạc chuông không hoạt động</string>
+    <string name="ringtonesucces">Cài đặt nhạc chuông thành công</string>
+    <string name="video_to_audio">Chuyển đổi Video</string>
+    <string name="my_audio">Âm thanh</string>
+    <string name="convert_audio">Chuyển đổi</string>
+    <string name="convert">Chuyển đổi Video</string>
+    <string name="format">Định dạng</string>
+    <string name="quality">Chất lượng</string>
+    <string name="ringtone">Nhạc chuông</string>
+    <string name="convert_to">Chuyển đổi </string>
+    <string name="contentrate">Hãy đánh giá 5 sao cho ứng dụng. Cảm ơn sự ủng hộ của bạn</string>
+    <string name="rate_this_app">Đánh giá ứng dụng</string>
+    <string name="not_now">Để sau</string>
+    <string name="rate">Đánh giá</string>
+    <string name="run_background">Chạy nền</string>
+    <string name="convert_complete">Hoàn thành</string>
+    <string name="convert_in">Chuyển đổi</string>
+    <string name="cancel">Hủy</string>
+    <string name="fail">Lỗi</string>
+    <string name="remove">Bạn chắc chắn muốn xóa video này?</string>
+    <string name="remove_title">Xóa video?</string>
+    <string name="removeed">Âm thanh đã xóa</string>
+    <string name="trimvideo">Cắt Video</string>
+    <string name="edit_speed">Chỉnh tốc độ</string>
+    <string name="enable_audio">Có âm thanh</string>
+    <string name="fast_motion">Nhanh</string>
+    <string name="motion_video">Hiệu ứng video</string>
+    <string name="slow_motion">Chậm</string>
+    <string name="warning">Cảnh báo!</string>    <string name="next">Tiếp</string>
+    <string name="fb_notavainle">Facebook chưa được cài đặt</string>
+    <string name="is_notavaible">Instagram chưa được cài đặt</string>
+    <string name="fs">Chuyển động video</string>
+    <string name="finish">Kết thúc</string>
+    <string name="capture_video">Quay Video</string>
+    <string name="videos">Videos</string>
+    <string name="video_motion">Chuyển động</string>
+</resources>

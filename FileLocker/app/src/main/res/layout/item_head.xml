@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingBottom="@dimen/s16dp"
+    android:paddingLeft="@dimen/s24dp"
+    android:paddingTop="@dimen/s16dp">
+
+    <ImageView
+        android:id="@+id/iv_chude"
+        android:layout_width="@dimen/s65dp"
+        android:layout_height="@dimen/s65dp" />
+
+    <com.security.filelocker.utils.CustomTextViewSanFranciscoMedium
+        android:id="@+id/tv_chude"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/s8dp"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/s25sp" />
+</LinearLayout>

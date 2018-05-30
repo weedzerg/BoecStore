@@ -1,0 +1,55 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/serviewuser"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#f4f4f4"></android.support.v7.widget.SearchView>
+        <!-- TODO: Update blank fragment layout -->
+        <ListView
+            android:id="@+id/lsviewuser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#00ffffff" />
+    </LinearLayout>
+
+    <ImageView
+
+        android:id="@+id/sortuser"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|right"
+        android:layout_margin="5dp"
+        android:src="@drawable/selector_sort" />
+
+    <LinearLayout
+        android:id="@+id/lnuser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="#26767676"
+        android:gravity="center_horizontal">
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/tonguser"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        />
+</FrameLayout>

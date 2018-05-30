@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/background_selector"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/s20dp"
+    android:padding="@dimen/s16dp"
+    android:orientation="vertical">
+
+    <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoMediumBlack
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/S"
+        android:textColor="@color/colorTextBold"
+        android:textSize="@dimen/s26sp" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/s30dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s60dp">
+
+        <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegularBlack
+            android:layout_marginRight="@dimen/s50dp"
+            android:background="@drawable/background_boder"
+            android:id="@+id/tv_huy"
+            android:layout_width="@dimen/s100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/s10dp"
+            android:text="@string/cancel"
+            android:textColor="#111"
+            android:textSize="@dimen/s22sp" />
+
+        <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegularBlack
+            android:background="@drawable/background_boder"
+            android:padding="@dimen/s10dp"
+            android:id="@+id/tv_ok"
+            android:layout_width="@dimen/s100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/s20dp"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:textColor="#111"
+            android:textSize="@dimen/s22sp" />
+    </LinearLayout>
+</LinearLayout>

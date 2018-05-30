@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">S8+ Messenger</string>
+    <string name="image">Images</string>
+    <string name="add_remove">Delete/add</string>
+    <string name="remove">Remove</string>
+    <string name="drawer_open">Mo menu</string>
+    <string name="drawer_close">Dong menu</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_them_all">ThemAllActivity</string>
+    <string name="input">Input</string>
+    <string name="editor">Editor</string>
+    <string name="messenger">Messengers</string>
+    <string name="input_contact">Input contact</string>
+    <string name="theme">Theme</string>
+    <string name="quick_responses">Quick responses</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="block_number">Block number</string>
+    <string name="S">Tap OK to set S8+ Messenger as your default messaging app.</string>
+    <string name="themes">Do you want setting theme for app?</string>
+    <string name="call">Call</string>
+    <string name="contact">Contacts</string>
+    <string name="send">Send</string>
+    <string name="sent">Sent</string>
+    <string name="notsent">Fail Send</string>
+    <string name="contentrate">If you enjoy this app. Please take a monent to rate this app. It wan\'t take more than a minute. Thank you for your support</string>
+    <string name="rate_this_app">Rate this app</string>
+    <string name="not_now">Not now!</string>
+    <string name="rate">Rate!</string>
+    <string name="block_messenger">Block messenger</string>
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorActionbar"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_weight="1"
+        android:id="@+id/ln_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorActionbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s70dp"
+                android:background="@color/colorActionbar_"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:padding="@dimen/s20dp"
+                    android:src="@drawable/ic_back" />
+
+                <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoBold
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:text="Select contact "
+                    android:textColor="#111"
+                    android:textSize="@dimen/s28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_hoantat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/s15dp"
+                    android:layout_marginLeft="@dimen/s15dp"
+                    android:layout_marginRight="@dimen/s20dp"
+                    android:layout_marginTop="@dimen/s15dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/background_selector_button"
+                    android:gravity="center"
+                    android:text="@string/editor"
+                    android:textColor="#f5f5f5"
+                    android:textSize="@dimen/s24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s1dp"
+                android:background="#cccccc" />
+
+            <ListView
+                android:id="@+id/ls_view_contact"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/s16dp"></ListView>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/lnads"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"></RelativeLayout>
+
+</LinearLayout>

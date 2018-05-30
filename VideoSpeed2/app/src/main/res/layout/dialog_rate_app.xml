@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/s30dp"
+    android:layout_marginRight="@dimen/s30dp"
+    android:background="@drawable/background_diaglog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@drawable/background_diaglog_inner"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s80dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/s30dp"
+                android:layout_height="@dimen/s30dp"
+                android:src="@drawable/ic_rate" />
+
+            <com.media.vid.video_speed.utils.TextBlod_
+                android:layout_marginLeft="@dimen/s30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rate_this_app"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/s24sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/s16dp"
+            android:layout_marginBottom="@dimen/s10dp"
+            android:layout_marginLeft="@dimen/s16dp"
+            android:layout_marginTop="@dimen/s16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.media.vid.video_speed.utils.TextRegular
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s10dp"
+                android:text="@string/contentrate"
+                android:textColor="@color/backgrounddiag"
+                android:textSize="@dimen/s22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s8dp"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/s16dp"
+            android:orientation="horizontal">
+
+            <com.media.vid.video_speed.utils.TextBlod_
+                android:id="@+id/tv_not_now"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/s20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingBottom="@dimen/s10dp"
+                android:paddingTop="@dimen/s10dp"
+                android:text="@string/not_now"
+                android:textColor="@color/red"
+                android:textSize="@dimen/s22sp" />
+
+            <com.media.vid.video_speed.utils.TextBlod_
+                android:id="@+id/tv_rate_app"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/s20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingBottom="@dimen/s10dp"
+                android:paddingTop="@dimen/s10dp"
+                android:text="@string/rate"
+                android:textColor="@color/green"
+                android:textSize="@dimen/s22sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

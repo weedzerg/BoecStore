@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Loop Video</string>
+    <string name="capture_video">Quay Video</string>
+    <string name="edit_video">Chỉnh Sửa Video</string>
+    <string name="cut_video">Cắt Video</string>
+    <string name="export_to_gif">Xuất Gif</string>
+    <string name="export_to_video">Xuất Video</string>
+    <string name="share_video">Chia Sẻ Video</string>
+    <string name="link">Đường dẫn:</string>
+    <string name="video">Video</string>
+    <string name="my_video">Videos</string>
+    <string name="share">Chia sẻ</string>
+    <string name="share_gif">Chia Sẻ Gif</string>
+    <string name="fb_notavainle">Facebook chưa được cài đặt</string>
+    <string name="is_notavaible">Instagram chưa được cài đặt</string>
+    <string name="contentrate">Nếu bạn thích ứng dụng này, hãy dành chút thời gian để đánh giá nó. Cảm ơn sự hỗ trợ của bạn</string>
+    <string name="rate_this_app">Đánh giá ứng dụng</string>
+    <string name="not_now">Để sau</string>
+    <string name="rate">Đánh giá</string>
+    <string name="capturing">Bắt đầu quay</string>
+    <string name="wait_for_processing">Chờ trong quá trình xử lý</string>
+
+</resources>

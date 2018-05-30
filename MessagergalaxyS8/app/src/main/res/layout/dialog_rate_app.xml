@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_selector">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/s20dp"
+        android:orientation="vertical"
+        android:padding="@dimen/s16dp">
+
+        <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoBoldBlack
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rate_this_app"
+            android:textSize="@dimen/s28sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s2dp"
+            android:layout_marginBottom="@dimen/s15dp"
+            android:layout_marginTop="@dimen/s20dp"
+            android:background="#111" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/s20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/s50dp"
+                android:layout_height="@dimen/s50dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="@dimen/s10dp"
+                android:src="@drawable/ic_rate"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/contentrate"
+                android:textColor="#111"
+                android:textSize="@dimen/s26sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegular
+                android:id="@+id/tv_not_now"
+                android:layout_width="@dimen/s120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/s20dp"
+                android:background="@drawable/background_boder"
+                android:gravity="center"
+                android:padding="@dimen/s10dp"
+                android:text="@string/not_now"
+                android:textColor="#111"
+                android:textSize="@dimen/s24sp" />
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegular
+                android:id="@+id/tv_rate_app"
+                android:layout_width="@dimen/s120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/s20dp"
+                android:background="@drawable/background_boder"
+                android:gravity="center"
+                android:padding="@dimen/s10dp"
+                android:text="@string/rate"
+                android:textColor="#111"
+                android:textSize="@dimen/s24sp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

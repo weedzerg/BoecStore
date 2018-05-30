@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Convert Video</string>
+    <string name="my_video">Video của bạn</string>
+    <string name="wait_for_processing">Chờ xử lý...</string>
+    <string name="ok">Đồng ý</string>
+    <string name="notringtone">Nhạc chuông không hoạt động</string>
+    <string name="ringtonesucces">Cài đặt nhạc chuông thành công</string>
+    <string name="video_to_audio">Chuyển đổi Video</string>
+    <string name="my_audio">Âm thanh</string>
+    <string name="convert_audio">Chuyển đổi</string>
+    <string name="convert">Chuyển đổi Video</string>
+    <string name="format">Định dạng</string>
+    <string name="quality">Chất lượng</string>
+    <string name="ringtone">Nhạc chuông</string>
+    <string name="convert_to">Chuyển đổi sang </string>
+    <string name="contentrate">Nếu bạn thích ứng dụng này, hãy dành chút thời gian để đánh giá nó. Cảm ơn sự hỗ trợ của bạn</string>
+    <string name="rate_this_app">Đánh giá ứng dụng</string>
+    <string name="not_now">Để sau</string>
+    <string name="rate">Đánh giá</string>
+    <string name="run_background">Chạy nền</string>
+    <string name="convert_complete">Hoàn thành</string>
+    <string name="convert_in">Đang chuyển đổi</string>
+    <string name="cancel">Hủy</string>
+    <string name="fail">Lỗi</string>
+    <string name="remove">Bạn chắc chắn muốn xóa âm thanh này?</string>
+    <string name="remove_title">Xóa audio?</string>
+    <string name="removeed">Âm thanh đã xóa</string>
+    <string name="conveting">Chuyển đổi...</string>
+    <string name="audio_erro">Âm thanh lỗi</string>
+    <string name="no_sound">Video không có âm thanh</string>
+
+    <string-array name="audio_array">
+        <item>AAC</item>
+        <item>MP3</item>
+        <item>FLAC</item>
+        <item>OGG</item>
+        <item>M4A</item>
+        <item>WAV</item>
+    </string-array>
+</resources>

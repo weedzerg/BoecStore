@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e4e4e4"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/s10dp"
+        android:background="@drawable/background_selector"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/s5dp"
+        android:paddingLeft="@dimen/s10dp"
+        android:paddingRight="@dimen/s10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ln_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/s8dp"
+                android:layout_marginBottom="@dimen/s8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/s85dp"
+                    android:layout_height="@dimen/s85dp"
+                    android:src="@drawable/ic_photos" />
+
+                <com.security.filelocker.utils.CustomTextViewSanFranciscoMedium
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/s16dp"
+                    android:text="@string/images"
+                    android:textSize="@dimen/s28sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s1dp"
+                android:background="#ccc" />
+
+            <LinearLayout
+                android:id="@+id/ln_audios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/s8dp"
+                android:layout_marginBottom="@dimen/s8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/s85dp"
+                    android:layout_height="@dimen/s85dp"
+                    android:src="@drawable/ic_music2s" />
+
+                <com.security.filelocker.utils.CustomTextViewSanFranciscoMedium
+                    android:id="@+id/customTextViewSanFranciscoMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/s16dp"
+                    android:text="@string/musics"
+                    android:textSize="@dimen/s28sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s1dp"
+                android:background="#ccc" />
+
+            <LinearLayout
+                android:id="@+id/ln_videos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/s8dp"
+                android:layout_marginBottom="@dimen/s8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/s85dp"
+                    android:layout_height="@dimen/s85dp"
+                    android:src="@drawable/ic_videos" />
+
+                <com.security.filelocker.utils.CustomTextViewSanFranciscoMedium
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/s16dp"
+                    android:text="@string/videos"
+                    android:textSize="@dimen/s28sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s1dp"
+                android:background="#ccc" />
+
+            <LinearLayout
+                android:id="@+id/ln_documents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/s8dp"
+                android:layout_marginBottom="@dimen/s8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/s85dp"
+                    android:layout_height="@dimen/s85dp"
+                    android:src="@drawable/ic_files" />
+
+                <com.security.filelocker.utils.CustomTextViewSanFranciscoMedium
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/s16dp"
+                    android:text="@string/documents"
+                    android:textSize="@dimen/s28sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s1dp"
+                android:background="#ccc" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_ads"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s65dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:visibility="gone"></RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>
+
+
+

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Reverse Video</string>
+    <string name="share">Chia sẻ</string>
+    <string name="share_gif">Chia Sẻ Gif</string>
+    <string name="fb_notavainle">Facebook chưa được cài đặt</string>
+    <string name="is_notavaible">Instagram chưa được cài đặt</string>
+    <string name="contentrate">Nếu bạn thích ứng dụng này, hãy dành chút thời gian để đánh giá nó. Cảm ơn sự hỗ trợ của bạn</string>
+    <string name="rate_this_app">Đánh giá ứng dụng Reverse Video</string>
+    <string name="not_now">Để sau</string>
+    <string name="rate">Đánh giá</string>
+    <string name="capture_video">Quay</string>
+    <string name="edit_video">Chỉnh sửa</string>
+    <string name="my_video">Bộ sưu tập</string>
+    <string name="rate_app">Đánh giá!</string>
+    <string name="reverse_video">REVERSE VIDEO</string>
+    <string name="trim_video">Cắt Video</string>
+    <string name="erro">Lỗi!</string>
+    <string name="reverse">Đảo ngược</string>
+    <string name="slow_motion">Chuyển động chậm</string>
+    <string name="wait_for_processing">Chờ trong quá trình xử lý...</string>
+    <string name="slide_video">Trình diễn</string>
+    <string name="save_video">Lưu </string>
+    <string name="reversevideo">Đảo video</string>
+
+</resources>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Whistle Action</string>
+    <string name="find_phone">Find phone</string>
+    <string name="call_phone">Call phone</string>
+    <string name="camera">Camera</string>
+    <string name="whistle">Whistle</string>
+    <string name="clap">Clap</string>
+    <string name="ring">Ring</string>
+    <string name="flash">Flash</string>
+    <string name="number_phone">Number</string>
+    <string name="sound_action">WHISTLE ACTION</string>
+    <string name="inputnumber">input number phone</string>
+    <string name="option">Only select 2 options</string>
+    <string name="hdchon">Action selected</string>
+    <string name="cameraopen">Camera opened</string>
+    <string name="calling">Calling...</string>
+    <string name="turnoffmp3">Turn off ring tone</string>
+    <string name="ringtone">Ring Tone</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+</resources>

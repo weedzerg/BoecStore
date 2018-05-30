@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/background_diaglog"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/s25dp"
+        android:paddingLeft="@dimen/s60dp"
+        android:paddingRight="@dimen/s60dp"
+        android:paddingTop="@dimen/s20dp">
+
+        <FrameLayout
+            android:layout_marginTop="@dimen/s8dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s50dp">
+
+            <ProgressBar
+                android:id="@+id/pb1"
+                android:layout_width="@dimen/s40dp"
+                android:layout_height="@dimen/s40dp"
+                android:layout_gravity="center"/>
+
+            <ProgressBar
+                android:id="@+id/pb2"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="@dimen/s190dp"
+                android:layout_height="@dimen/s8dp"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <com.media.vid.video_speed.utils.TextRegular
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wait_for_processing"
+            android:textColor="@color/backgrounddiag"
+            android:textSize="@dimen/s22sp" />
+
+        <com.media.vid.video_speed.utils.TextRegular
+            android:id="@+id/tv_runbackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s10dp"
+            android:paddingBottom="@dimen/s16dp"
+            android:paddingLeft="@dimen/s20dp"
+            android:textColor="@color/backgrounddiag"
+            android:paddingRight="@dimen/s20dp"
+            android:paddingTop="@dimen/s10dp"
+            android:text="@string/run_background"
+            android:textSize="@dimen/s18sp" />
+    </LinearLayout>
+
+</FrameLayout>

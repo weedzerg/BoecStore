@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/s300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/background_diaglog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s70dp"
+            android:background="@drawable/background_diaglog_inner"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/s40dp"
+                android:layout_height="@dimen/s40dp"
+                android:src="@drawable/ic_warning" />
+
+            <com.media.vid.video_speed.utils.TextBlod_
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s20dp"
+                android:text="@string/warning"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/s24sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/s8dp"
+            android:layout_marginLeft="@dimen/s20dp"
+            android:layout_marginRight="@dimen/s20dp"
+            android:layout_marginTop="@dimen/s20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.media.vid.video_speed.utils.TextRegular
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s10dp"
+                android:gravity="center"
+                android:text="If speed >2.5x, Video isn't smooth"
+                android:textColor="@color/backgrounddiag"
+                android:textSize="@dimen/s20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/s16dp"
+            android:layout_marginTop="@dimen/s16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <com.media.vid.video_speed.utils.TextBlod_
+                android:id="@+id/tv_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/s20dp"
+                android:gravity="center"
+                android:paddingBottom="@dimen/s10dp"
+                android:paddingLeft="@dimen/s50dp"
+                android:paddingRight="@dimen/s50dp"
+                android:paddingTop="@dimen/s10dp"
+                android:text="@string/ok"
+                android:textColor="@color/green"
+                android:textSize="@dimen/s22sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

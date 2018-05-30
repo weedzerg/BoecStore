@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ln_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#f5f5f5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s70dp"
+            android:background="@color/colorActionbar_"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="@dimen/s20dp"
+                android:src="@drawable/ic_back" />
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoMedium
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="4"
+                android:text="@string/theme"
+                android:textColor="#111"
+                android:textSize="@dimen/s28sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s1dp"
+            android:background="#cccccc" />
+
+        <GridView
+            android:id="@+id/gd_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="@dimen/s10dp"
+            android:numColumns="2"
+            android:padding="@dimen/s16dp"
+            android:verticalSpacing="@dimen/s10dp"></GridView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/lnads"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"></RelativeLayout>
+
+</LinearLayout>

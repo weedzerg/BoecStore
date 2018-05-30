@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background3"
+    android:layout_height="match_parent"
+    tools:context="com.media.convert.videotomp3aacc.activities.ChoiceActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_ads"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_ads">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/s16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/s120dp"
+                android:layout_height="@dimen/s120dp"
+                android:src="@drawable/ic_launcher" />
+
+            <com.media.convert.videotomp3aacc.utils.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/s30dp"
+
+                android:text="Convert Video to Audio"
+                android:textSize="@dimen/s60sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/fr_videotoaudio"
+                    android:layout_width="@dimen/s300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/s15dp">
+
+                    <com.media.convert.videotomp3aacc.utils.FontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/s80dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/s30dp"
+                        android:background="@drawable/bt_selector_border"
+                        android:gravity="center"
+                        android:text="@string/video_to_audio"
+                        android:textSize="@dimen/s40sp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/s95dp"
+                        android:layout_height="@dimen/s95dp"
+                        android:src="@drawable/videotoaudio_selector" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/fr_myaudio"
+                    android:layout_width="@dimen/s300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/s15dp">
+
+                    <com.media.convert.videotomp3aacc.utils.FontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/s80dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/s30dp"
+                        android:background="@drawable/bt_selector_border"
+                        android:gravity="center"
+                        android:text="@string/my_audio"
+                        android:textSize="@dimen/s40sp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/s95dp"
+                        android:layout_height="@dimen/s95dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/myaudio_selector" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/fr_rateapp"
+                    android:layout_width="@dimen/s300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/s15dp">
+
+                    <com.media.convert.videotomp3aacc.utils.FontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/s80dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/s30dp"
+                        android:background="@drawable/bt_selector_border"
+                        android:gravity="center"
+                        android:text="@string/rate"
+                        android:textSize="@dimen/s40sp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/s95dp"
+                        android:layout_height="@dimen/s95dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/rate_selector" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

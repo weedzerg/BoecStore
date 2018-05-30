@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="@dimen/s100dp"
+        android:layout_height="@dimen/s100dp"
+        android:padding="@dimen/s5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/s15dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <com.security.filelocker.utils.CustomTextViewSanFranciscoDisplayRegular
+            android:id="@+id/tv_name_folder"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:text="dfajois"
+            android:textColor="#111"
+            android:textSize="@dimen/s25sp" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.security.filelocker.utils.CustomTextViewSanFranciscoDisplayRegular
+                android:id="@+id/tv_size"
+                android:visibility="gone"
+                android:textSize="@dimen/s24sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/s16dp"
+                android:gravity="bottom|center" />
+
+            <ImageView
+                android:id="@+id/iv_check"
+                android:layout_width="@dimen/s35dp"
+                android:layout_height="@dimen/s35dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_tick" />
+        </FrameLayout>
+
+    </LinearLayout>
+</LinearLayout>

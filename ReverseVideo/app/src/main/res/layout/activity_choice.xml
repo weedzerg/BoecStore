@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_"
+    android:orientation="vertical"
+    tools:context="com.media.studio.reversevideo.activitys.ChoiceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/background"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <com.media.studio.reversevideo.utils.UTMBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:gravity="center|bottom"
+                android:text="@string/reverse_video"
+                android:textColor="#fff"
+                android:textSize="@dimen/s50sp" />
+
+            <com.media.studio.reversevideo.utils.UTMMedium
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/s10dp"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:text="&amp; Slowmotion Video"
+                android:textSize="@dimen/s30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ln_capture"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/s20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/s95dp"
+                    android:layout_height="@dimen/s95dp"
+                    android:layout_gravity="center|bottom"
+                    android:src="@drawable/ic_camera" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/s20sp"
+                    android:gravity="center"
+                    android:text="@string/capture_video"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/s24sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/s1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/s30dp"
+                android:layout_marginTop="@dimen/s30dp"
+                android:background="#b6c4cf" />
+
+            <LinearLayout
+                android:id="@+id/ln_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/s20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/s95dp"
+                    android:layout_height="@dimen/s95dp"
+                    android:layout_gravity="center|bottom"
+                    android:src="@drawable/ic_videoedit" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/s20sp"
+                    android:gravity="center"
+                    android:text="@string/edit_video"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/s24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s1dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/s30dp"
+                android:layout_marginRight="@dimen/s30dp"
+                android:layout_weight="1"
+                android:background="#b6c4cf" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/s30dp"
+                android:layout_marginRight="@dimen/s30dp"
+                android:layout_weight="1"
+                android:background="#b6c4cf" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ln_video"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/s20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/s95dp"
+                    android:layout_height="@dimen/s95dp"
+                    android:layout_gravity="center|bottom"
+                    android:src="@drawable/ic_myvideo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/s20sp"
+                    android:gravity="center"
+                    android:text="@string/my_video"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/s24sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/s1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/s30dp"
+                android:layout_marginTop="@dimen/s30dp"
+                android:background="#b6c4cf" />
+
+            <LinearLayout
+                android:id="@+id/ln_rate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/s20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <ImageView
+                    android:layout_width="@dimen/s95dp"
+                    android:layout_height="@dimen/s95dp"
+                    android:layout_gravity="center|bottom"
+                    android:src="@drawable/ic_rate" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/s20sp"
+                    android:gravity="center"
+                    android:text="@string/rate_app"
+                    android:textColor="#fff"
+
+                    android:textSize="@dimen/s24sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_ads"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s65dp"
+        android:visibility="gone"></RelativeLayout>
+</LinearLayout>

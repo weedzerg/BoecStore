@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ln_back_draw"
+    android:layout_width="@dimen/s320dp"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/s20dp"
+    android:paddingRight="@dimen/s20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s85dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/ln_add_img"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/s50dp"
+                android:layout_height="@dimen/s50dp"
+                android:padding="@dimen/s10dp"
+                android:src="@drawable/ic_image" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/image"
+                android:textColor="@color/colorTextLidht1"
+                android:textSize="@dimen/s18sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ln_add_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/s50dp"
+                android:layout_height="@dimen/s50dp"
+                android:padding="@dimen/s10dp"
+                android:src="@drawable/ic_person" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/add_remove"
+                android:textColor="@color/colorTextLidht1"
+                android:textSize="@dimen/s18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_remove"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/s50dp"
+                android:layout_height="@dimen/s50dp"
+                android:padding="@dimen/s10dp"
+                android:src="@drawable/ic_remove" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/remove"
+                android:textColor="@color/colorTextLidht1"
+                android:textSize="@dimen/s18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s2dp"
+        android:background="@color/colorTextLidht1"
+        android:visibility="gone" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoMedium
+            android:id="@+id/tv_phanhoinhanh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/s25dp"
+            android:text="@string/quick_responses"
+            android:textColor="@color/colorTextBold"
+            android:textSize="@dimen/s24sp" />
+
+        <TextView
+            android:id="@+id/tv_hengio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s25dp"
+            android:text="Hẹn giờ tin nhắn"
+            android:textColor="@color/colorTextBold"
+            android:textSize="@dimen/s24sp"
+            android:visibility="gone" />
+
+        <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoMedium
+            android:id="@+id/tv_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/s30dp"
+            android:text="@string/theme"
+            android:textColor="@color/colorTextBold"
+            android:textSize="@dimen/s24sp" />
+
+        <TextView
+            android:id="@+id/tv_slide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s25dp"
+            android:text="Tạo bản trình chiếu"
+            android:textColor="@color/colorTextBold"
+            android:textSize="@dimen/s24sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s2dp"
+        android:layout_marginBottom="@dimen/s25dp"
+        android:layout_marginTop="@dimen/s25dp"
+        android:background="@color/colorTextLidht1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s65dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_sender"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/s16dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoMedium
+                android:id="@+id/tv_sender_draw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextBold"
+                android:textSize="@dimen/s24sp" />
+
+            <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoLight
+                android:id="@+id/tv_num_sender_draw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s5dp"
+                android:textColor="@color/colorTextMedium" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoMedium
+        android:id="@+id/tv_chan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/s30dp"
+        android:text="@string/block_number"
+
+        android:textColor="@color/colorTextBold"
+        android:textSize="@dimen/s24sp" />
+
+    <TextView
+        android:id="@+id/tv_share_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s25dp"
+        android:text="Chia sẻ danh bạ"
+        android:textColor="@color/colorTextBold"
+        android:textSize="@dimen/s24sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s2dp"
+            android:background="@color/colorTextLidht1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s85dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="3">
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/s50dp"
+                    android:layout_height="@dimen/s50dp"
+                    android:padding="@dimen/s8dp"
+                    android:src="@drawable/ic_noti" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Thông báo"
+                    android:textColor="@color/color_theme"
+                    android:textSize="@dimen/s18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+
+                    android:id="@+id/imageView2"
+                    android:layout_width="@dimen/s50dp"
+                    android:layout_height="@dimen/s50dp"
+                    android:padding="@dimen/s8dp"
+                    android:src="@drawable/ic_ghim" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Ghim"
+                    android:textColor="@color/colorTextLidht1"
+                    android:textSize="@dimen/s18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/s50dp"
+                    android:layout_height="@dimen/s50dp"
+                    android:padding="@dimen/s8dp"
+                    android:src="@drawable/ic_sim2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@color/colorTextLidht1"
+                    android:textSize="@dimen/s18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

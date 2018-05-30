@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/background_border"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/s20dp"
+        android:paddingLeft="@dimen/s80dp"
+        android:paddingRight="@dimen/s80dp"
+        android:paddingTop="@dimen/s20dp">
+
+
+        <com.media.convert.videotomp3aacc.utils.FontTextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Converting..."
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/s40sp" />
+
+        <com.github.lzyzsd.circleprogress.ArcProgress
+            android:id="@+id/arc_progress"
+            android:layout_width="@dimen/s100dp"
+            android:layout_height="@dimen/s100dp"
+            android:layout_marginTop="@dimen/s10dp"
+            app:arc_angle="250"
+            app:arc_bottom_text_size="@dimen/s18sp"
+            app:arc_progress="0"
+            app:arc_stroke_width="@dimen/s3dp"
+            app:arc_text_color="@color/colorAccent"
+            app:arc_text_size="@dimen/s40sp" />
+
+        <TextView
+            android:id="@+id/tv_runbackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s10dp"
+            android:background="@drawable/bt_color"
+            android:paddingBottom="@dimen/s5dp"
+            android:paddingLeft="@dimen/s8dp"
+            android:paddingRight="@dimen/s8dp"
+            android:paddingTop="@dimen/s5dp"
+            android:text="@string/run_background"
+            android:textSize="@dimen/s18sp" />
+    </LinearLayout>
+
+</FrameLayout>

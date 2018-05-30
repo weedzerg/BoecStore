@@ -1,0 +1,87 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/serview"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#f4f4f4"></android.support.v7.widget.SearchView>
+        <!-- TODO: Update blank fragment layout -->
+        <ListView
+            android:id="@+id/lsviewapp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ececec"
+            android:divider="#ececec"
+            android:dividerHeight="5dp"
+            android:text="@string/hello_blank_fragment" />
+    </LinearLayout>
+
+    <ImageView
+
+        android:id="@+id/sortapp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|right"
+        android:layout_margin="5dp"
+        android:src="@drawable/selector_sort" />
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        app:fab_addButtonColorNormal="@color/white"
+        app:fab_addButtonColorPressed="@color/white_pressed"
+        app:fab_addButtonPlusIconColor="@color/half_black"
+        app:fab_labelStyle="@style/menu_labels_style">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_colorPressed="@color/white_pressed"
+            app:fab_icon="@mipmap/ic_check"
+            app:fab_title="Đã phê duyệt" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_colorPressed="@color/white_pressed"
+            app:fab_icon="@mipmap/ic_clock"
+            app:fab_title="Chờ phê duyệt" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_colorPressed="@color/white_pressed"
+            app:fab_title="All" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <LinearLayout
+        android:id="@+id/lnapp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#26767676"
+        android:gravity="center_horizontal">
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+</FrameLayout>

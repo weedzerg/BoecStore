@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:padding="@dimen/s10dp"
+        android:layout_width="@dimen/s190dp"
+        android:layout_height="@dimen/s120dp">
+
+        <ImageView
+            android:id="@+id/iv_thumlvid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <com.media.vid.video_speed.utils.TextRegular
+            android:id="@+id/tv_datevid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="@dimen/s5dp"
+            android:layout_marginBottom="@dimen/s5dp"
+            android:background="#80111111"
+            android:text="00:00:18"
+            android:textColor="#fff"
+            android:textSize="@dimen/s16sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_marginRight="@dimen/s8dp"
+        android:layout_marginBottom="@dimen/s10dp"
+        android:layout_marginTop="@dimen/s10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/s8dp"
+        android:orientation="vertical">
+
+        <com.media.vid.video_speed.utils.TextRegular
+            android:layout_weight="1.5"
+            android:id="@+id/tv_namevid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Video.mp4"
+            android:textSize="@dimen/s20sp" />
+
+        <LinearLayout
+            android:layout_weight="0.5"
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.media.vid.video_speed.utils.TextRegular
+                android:id="@+id/tv_sizevid"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="24MB"
+                android:textColor="#b1b1b1"
+                android:textSize="@dimen/s18sp" />
+            <ImageView
+                android:layout_marginRight="@dimen/s16dp"
+                android:id="@+id/iv_remove"
+                android:paddingTop="@dimen/s20dp"
+                android:paddingLeft="@dimen/s20dp"
+                android:src="@drawable/ic_remove"
+                android:paddingRight="@dimen/s10dp"
+                android:layout_width="@dimen/s50dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

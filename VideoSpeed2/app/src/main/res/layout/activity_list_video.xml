@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_layout" />
+
+        <ListView
+            android:divider="@android:color/transparent"
+            android:dividerHeight="@dimen/s15dp"
+            android:id="@+id/lsview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/s16dp"
+            android:layout_weight="1"
+            android:horizontalSpacing="@dimen/s8dp"
+            android:numColumns="2"
+            android:verticalSpacing="@dimen/s8dp"></ListView>
+
+        <RelativeLayout
+            android:id="@+id/layout_ads"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s65dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:visibility="gone"></RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_choice"
+        android:layout_marginBottom="@dimen/s20dp"
+        android:layout_marginRight="@dimen/s20dp"
+        android:layout_gravity="bottom|right"
+        android:layout_width="@dimen/s85dp"
+        android:layout_height="@dimen/s85dp"
+        android:src="@drawable/ic_speed" />
+</FrameLayout>

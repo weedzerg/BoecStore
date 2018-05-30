@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Convert Video</string>
+    <string name="my_video">My Videos</string>
+    <string name="wait_for_processing">Waiting...</string>
+    <string name="ok">Ok</string>
+    <string name="notringtone">Ringtone feature is not working</string>
+    <string name="ringtonesucces">Ringtone set successfully</string>
+    <string name="video_to_audio">Video to Audio</string>
+    <string name="my_audio">My Audio</string>
+    <string name="convert_audio">Start Converter</string>
+    <string name="convert">Converter Video Audio</string>
+    <string name="format">Format</string>
+    <string name="quality">Quality</string>
+    <string name="ringtone">Ringtone</string>
+    <string name="convert_to">Convert to</string>
+
+    <string name="contentrate">If you enjoy this app. Please take a monent to rate this app. It wan\'t take more than a minute. Thank you for your support</string>
+    <string name="rate_this_app">Rate this app</string>
+    <string name="not_now">Not now!</string>
+    <string name="rate">Rate App!</string>
+    <string name="run_background">Run Background</string>
+    <string name="convert_complete">Convert complete</string>
+    <string name="convert_in">Convert in progress</string>
+    <string name="cancel">Cancel</string>
+    <string name="fail">Fail</string>
+    <string name="remove">Are you sure remove this audio?</string>
+    <string name="remove_title">Remove audio?</string>
+    <string name="removeed">Audio removed</string>
+    <string name="conveting">Converting...</string>
+    <string name="audio_erro">Audio erro</string>
+    <string name="no_sound">Video has\'t sound</string>
+
+    <string-array name="audio_array">
+        <item>AAC</item>
+        <item>MP3</item>
+        <item>FLAC</item>
+        <item>OGG</item>
+        <item>M4A</item>
+        <item>WAV</item>
+    </string-array>
+
+</resources>

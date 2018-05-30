@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    tools:context="com.galaxy.s8.messagepro.messagergalaxys8.fragments.SMSFragment">
+
+    <ProgressBar
+        android:id="@+id/pro_wait"
+        android:layout_width="@dimen/s50dp"
+        android:layout_height="@dimen/s50dp"
+        android:layout_gravity="center" />
+
+    <ListView
+        android:id="@+id/lsview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+</LinearLayout>

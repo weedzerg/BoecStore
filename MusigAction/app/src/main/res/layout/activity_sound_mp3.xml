@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#5c000000"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.AppBarLayout>
+
+        <ListView
+            android:id="@+id/lsmp3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:layout_marginTop="50dp"
+            android:padding="8dp"></ListView>
+
+        <TextView
+            android:id="@+id/ok"
+            android:layout_width="@dimen/size100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/size16dp"
+            android:layout_marginLeft="@dimen/size15dp"
+            android:layout_marginRight="@dimen/size25dp"
+            android:layout_marginTop="@dimen/size20dp"
+            android:background="@drawable/selector_background"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="@dimen/size18sp" />
+
+        <LinearLayout
+            android:id="@+id/lnpr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#41000000">
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size50dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

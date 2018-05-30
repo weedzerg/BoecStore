@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">File Locker</string>
+    <string name="image">Ảnh</string>
+    <string name="audio">Nhạc</string>
+    <string name="video">Video</string>
+    <string name="document">Tài liệu</string>
+    <string name="other">Tập tin khác</string>
+    <string name="security">Tập tin đã ẩn</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="not_now">Lúc khác!</string>
+    <string name="rate">Đánh giá!</string>
+    <string name="rate_app">Hãy đánh giá 5 sao!</string>
+    <string name="ok">Đồng ý</string>
+    <string name="cancel">Hủy</string>
+    <string name="videos">Videos</string>
+    <string name="images">Ảnh</string>
+    <string name="musics">Âm nhạc</string>
+    <string name="documents">Tài liệu</string>
+    <string name="alimages">Thư viện ảnh</string>
+    <string name="almusics">Thư viện nhạc</string>
+    <string name="alvideos">Thư viện video</string>
+    <string name="aldocuments">Documents</string>
+    <string name="no_choice">Chưa có lựa chọn nào.</string>
+    <string name="b_n_ng_b_o_m_t">Bạn có muốn bảo mật dữ liệu này không?</string>
+    <string name="decode_file">Gỡ bỏ bảo mật dữ liệu?</string>
+    <string name="backto">Back một lẫn nữa để kết thúc</string>
+    <string name="size_5mb"><![CDATA[Kích thước > 1MB: Ẩn tập tin]]></string>
+    <string name="processing">Đang xử lý...</string>
+    <string name="permission_sd">Giấy phép sử dụng SD Card</string>
+    <string name="per">Giấy phép bị từ chối</string>
+
+</resources>

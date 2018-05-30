@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ln_back"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/s20dp"
+    android:paddingRight="@dimen/s20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/s20dp"
+        android:paddingRight="@dimen/s20dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s65dp"
+            android:layout_marginLeft="@dimen/s5dp"
+            android:layout_marginRight="@dimen/s5dp"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/s30dp"
+                android:layout_height="@dimen/s30dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="@dimen/s15dp"
+                android:src="@drawable/ic_search"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.SearchView
+                    android:id="@+id/searview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorActionbar_"
+                    android:visibility="gone"></android.support.v7.widget.SearchView>
+
+                <android.support.v7.widget.SearchView
+                    android:id="@+id/searview_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorActionbar_"
+                    android:visibility="gone"></android.support.v7.widget.SearchView>
+
+            </FrameLayout>
+
+
+            <EditText
+
+                android:id="@+id/ed_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/s60dp"
+                android:layout_weight="4"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Tìm kiếm"
+                android:textColorHint="@color/colorTextLidht1"
+                android:textSize="@dimen/s24sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="@dimen/s20dp">
+
+                <ImageView
+                    android:id="@+id/iv_recoder"
+                    android:layout_width="@dimen/s35dp"
+                    android:layout_height="@dimen/s35dp"
+                    android:layout_marginLeft="@dimen/s15dp"
+                    android:src="@drawable/ic_recorde"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_menu"
+                    android:layout_width="@dimen/s20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/s20dp"
+                    android:gravity="center"
+                    android:text="&#8942;"
+                    android:textSize="@dimen/s28sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/s70dp"
+                    app:tabSelectedTextColor="@color/color_theme"
+                    app:tabTextColor="@color/colorTextLidht"></android.support.design.widget.TabLayout>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vpaper"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v4.view.ViewPager>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_new_sms_"
+                android:layout_width="@dimen/s80dp"
+                android:layout_height="@dimen/s80dp"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="@dimen/s16dp"
+                android:src="@drawable/ic_new_sms" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/lnads"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></RelativeLayout>
+</LinearLayout>

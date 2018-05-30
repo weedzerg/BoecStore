@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/s25dp"
+    android:paddingLeft="@dimen/s15dp"
+    android:paddingRight="@dimen/s15dp"
+    android:paddingTop="@dimen/s25dp">
+
+    <ImageView
+        android:id="@+id/iv_noti"
+        android:layout_width="@dimen/s60dp"
+        android:layout_height="@dimen/s60dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/s16dp"
+        android:layout_toRightOf="@+id/iv_noti"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/s16dp">
+
+        <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoBold
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Title"
+            android:textColor="@color/colorTextBold"
+            android:textSize="@dimen/s28sp" />
+
+        <com.galaxy.s8.messagepro.messagergalaxys8.utils.CustomTextViewSanFranciscoDisplayRegular
+            android:id="@+id/tv_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="body"
+            android:textColor="@color/colorTextMedium"
+            android:textSize="@dimen/s22sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_call"
+                android:layout_width="@dimen/s100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/call"
+                android:textColor="#00acc2"
+                android:textSize="@dimen/s28sp" />
+
+            <TextView
+                android:id="@+id/tv_sms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s16dp"
+                android:text="@string/messenger"
+                android:textColor="#00acc2"
+                android:textSize="@dimen/s28sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

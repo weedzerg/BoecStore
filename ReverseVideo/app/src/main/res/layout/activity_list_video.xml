@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <include layout="@layout/toolbar_" />
+
+            <ListView
+                android:id="@+id/lsview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:padding="8dp"></ListView>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_ads"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s65dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:visibility="gone"></RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/layout_process" />
+</FrameLayout>

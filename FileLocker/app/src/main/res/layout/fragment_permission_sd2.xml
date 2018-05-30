@@ -1,0 +1,25 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.security.filelocker.fragments.PermissionSD2Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_marginTop="@dimen/s10dp"
+        android:layout_marginBottom="@dimen/s10dp"
+        android:background="@drawable/sd2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:layout_marginLeft="@dimen/s20dp"
+        android:layout_marginRight="@dimen/s20dp"/>
+    <com.security.filelocker.utils.CustomTextViewSanFranciscoBold
+        android:layout_width="match_parent"
+        android:text="2"
+        android:layout_marginTop="@dimen/s10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="@dimen/s90sp"
+        android:textColor="#017368"
+        android:layout_height="match_parent" />
+</FrameLayout>
